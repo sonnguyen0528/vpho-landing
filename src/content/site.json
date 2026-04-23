@@ -11,7 +11,7 @@
   },
   "welcome": {
     "leadText": "Welcome to VPHO",
-    "bodyText": "– the heart of authentic Vietnamese cuisine in Campbell, CA. Dive into our sumptuous pho, crafted from age-old recipes, and explore a menu rich with traditional flavors and modern twists. Nestled in Campbell, CA. VPHO invites you to a culinary experience that echoes the vibrant streets of Vietnam."
+    "bodyText": "We're a family-run Vietnamese spot in Campbell. We cook the way we grew up eating. Broth takes twelve hours. Herbs come in fresh every morning. No shortcuts, no tricks, just real phở. Come try!"
   },
   "nav": [
     {
@@ -23,7 +23,7 @@
       "href": "#"
     },
     {
-      "label": "Catering",
+      "label": "Party Trays",
       "href": "#"
     },
     {
@@ -85,13 +85,13 @@
   },
   "hero": {
     "primaryButtonLabel": "Explore Menu",
-    "headlineLine1": "Real",
-    "headlineLine2": "Phở",
-    "secondaryButtonLabel": "Call to Reserve",
-    "tagline": "A family kitchen in Campbell",
-    "secondaryButtonHref": "tel:+14083782234",
+    "headlineLine1": "Immersive",
+    "headlineLine2": "Flavors",
+    "secondaryButtonLabel": "Book a Table",
+    "tagline": "Discover the true taste of Vietnam",
+    "secondaryButtonHref": "#contact",
     "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop",
-    "description": "We grew up eating this food. Now we cook it for you. Broth simmers overnight, herbs come in fresh every morning. Come hungry.",
+    "description": "Experience authentic recipes passed down through generations, served fresh in the heart of Campbell.",
     "primaryButtonHref": "#cta"
   }
 }
