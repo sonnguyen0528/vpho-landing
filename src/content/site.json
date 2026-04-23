@@ -87,9 +87,9 @@
     "primaryButtonLabel": "Explore Menu",
     "headlineLine1": "Immersive",
     "headlineLine2": "Flavors",
-    "secondaryButtonLabel": "Book a Table",
+    "secondaryButtonLabel": "Call to Reserve",
     "tagline": "Discover the true taste of Vietnam",
-    "secondaryButtonHref": "#contact",
+    "secondaryButtonHref": "tel:+14083782234",
     "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop",
     "description": "Experience authentic recipes passed down through generations, served fresh in the heart of Campbell.",
     "primaryButtonHref": "#cta"
