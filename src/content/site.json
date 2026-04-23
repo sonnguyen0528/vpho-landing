@@ -1,0 +1,79 @@
+{
+  "business": {
+    "phone": "(408) 378-2234",
+    "phoneTel": "+14083782234",
+    "email": "hello@v-pho.com",
+    "addressLine1": "930 W Hamilton Ave, Ste 110",
+    "addressLine2": "Campbell, CA 95008",
+    "mapsUrl": "https://maps.google.com/?q=930+W+Hamilton+Ave+Ste+110+Campbell+CA+95008",
+    "brandTagline": "Experience the heart of authentic Vietnamese cuisine in Campbell, CA. We serve traditional flavors crafted with modern passion.",
+    "hoursNote": "To-go orders and last calls end 15 minutes before closing."
+  },
+  "hours": [
+    { "label": "Lunch", "value": "11:00 AM - 3:00 PM" },
+    { "label": "Dinner", "value": "5:00 PM - 10:30 PM" }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/vphorestaurant/",
+    "instagram": "https://www.instagram.com/vpho_restaurant/",
+    "yelp": "https://www.yelp.com/biz/vpho-campbell-2",
+    "google": "https://g.page/r/CephFwoU6T3gEBM/review"
+  },
+  "nav": [
+    { "label": "Home", "href": "#" },
+    { "label": "About Us", "href": "#" },
+    { "label": "Catering", "href": "#" },
+    { "label": "Contact Us", "href": "#" }
+  ],
+  "hero": {
+    "tagline": "Discover the true taste of Vietnam",
+    "headlineLine1": "Immersive",
+    "headlineLine2": "Flavors",
+    "description": "Experience authentic recipes passed down through generations, served fresh in the heart of Campbell.",
+    "primaryButtonLabel": "Explore Menu",
+    "primaryButtonHref": "#cta",
+    "secondaryButtonLabel": "Book a Table",
+    "secondaryButtonHref": "#contact",
+    "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop"
+  },
+  "welcome": {
+    "leadText": "Welcome to VPHO",
+    "bodyText": "– the heart of authentic Vietnamese cuisine in Campbell, CA. Dive into our sumptuous pho, crafted from age-old recipes, and explore a menu rich with traditional flavors and modern twists. Nestled in Campbell, CA. VPHO invites you to a culinary experience that echoes the vibrant streets of Vietnam."
+  },
+  "banner": {
+    "text": "Fresh & Authentic Vietnamese Food in the Heart of Campbell"
+  },
+  "offerings": {
+    "eyebrow": "Our Offerings",
+    "heading": "Crafted with Passion",
+    "items": [
+      {
+        "title": "Fresh Ingredients",
+        "description": "Sourced locally and prepared daily. We believe that the key to vibrant flavors lies in the quality and freshness of every single herb, vegetable, and cut of meat.",
+        "image": "https://images.unsplash.com/photo-1596683720379-b5a83a002758?q=80&w=800&auto=format&fit=crop",
+        "alt": "Fresh herbs and ingredients",
+        "icon": "leaf"
+      },
+      {
+        "title": "Signature Menu",
+        "description": "From our rich, slow-simmered bone broth to our vibrant fresh spring rolls and hearty rice plates, discover your new favorite traditional dish.",
+        "image": "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=800&auto=format&fit=crop",
+        "alt": "Assorted Vietnamese Dishes",
+        "icon": "book"
+      },
+      {
+        "title": "Expert Catering",
+        "description": "Bring the unforgettable flavors of Vietnam to your next event. We offer customizable catering packages perfect for corporate events, parties, and family gatherings.",
+        "image": "https://images.unsplash.com/photo-1555244162-803834f87a33?q=80&w=800&auto=format&fit=crop",
+        "alt": "Catering spread",
+        "icon": "heart"
+      }
+    ]
+  },
+  "cta": {
+    "buttonLabel": "View Menu",
+    "buttonHref": "#full-menu",
+    "heading": "Gluten-Free & Vegan Options Available",
+    "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=2000&auto=format&fit=crop"
+  }
+}
