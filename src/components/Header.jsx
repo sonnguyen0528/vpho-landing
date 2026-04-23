@@ -62,12 +62,6 @@ export default function Header() {
 
         <div className="hidden lg:flex items-center gap-6">
           <HeaderSocialIcons />
-          <a
-            href="#menu"
-            className="bg-brand-gold hover:bg-white text-brand-dark font-bold text-sm uppercase tracking-widest px-8 py-3 rounded-none transition-all duration-300 border-2 border-brand-gold hover:border-white"
-          >
-            Menu
-          </a>
         </div>
       </nav>
     </header>
