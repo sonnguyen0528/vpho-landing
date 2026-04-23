@@ -27,14 +27,30 @@ collections:
             widget: object
             collapsed: true
             fields:
-              - { label: Phone (display), name: phone, widget: string }
-              - { label: Phone (tel: link, digits only w/ country code), name: phoneTel, widget: string }
-              - { label: Email, name: email, widget: string }
-              - { label: Address line 1, name: addressLine1, widget: string }
-              - { label: Address line 2, name: addressLine2, widget: string }
-              - { label: Google Maps URL, name: mapsUrl, widget: string }
-              - { label: Footer brand tagline, name: brandTagline, widget: text }
-              - { label: Hours note (small text under hours), name: hoursNote, widget: text }
+              - label: Phone display
+                name: phone
+                widget: string
+              - label: Phone tel link (digits only with country code)
+                name: phoneTel
+                widget: string
+              - label: Email
+                name: email
+                widget: string
+              - label: Address line 1
+                name: addressLine1
+                widget: string
+              - label: Address line 2
+                name: addressLine2
+                widget: string
+              - label: Google Maps URL
+                name: mapsUrl
+                widget: string
+              - label: Footer brand tagline
+                name: brandTagline
+                widget: text
+              - label: Hours note
+                name: hoursNote
+                widget: text
 
           - label: Hours
             name: hours
@@ -42,18 +58,30 @@ collections:
             collapsed: true
             summary: '{{fields.label}} — {{fields.value}}'
             fields:
-              - { label: Label (e.g. Lunch), name: label, widget: string }
-              - { label: Value (e.g. 11:00 AM - 3:00 PM), name: value, widget: string }
+              - label: Label
+                name: label
+                widget: string
+              - label: Hours
+                name: value
+                widget: string
 
           - label: Social Links
             name: social
             widget: object
             collapsed: true
             fields:
-              - { label: Facebook URL, name: facebook, widget: string }
-              - { label: Instagram URL, name: instagram, widget: string }
-              - { label: Yelp URL, name: yelp, widget: string }
-              - { label: Google Review URL, name: google, widget: string }
+              - label: Facebook URL
+                name: facebook
+                widget: string
+              - label: Instagram URL
+                name: instagram
+                widget: string
+              - label: Yelp URL
+                name: yelp
+                widget: string
+              - label: Google Review URL
+                name: google
+                widget: string
 
           - label: Header Nav Links
             name: nav
@@ -61,67 +89,118 @@ collections:
             collapsed: true
             summary: '{{fields.label}}'
             fields:
-              - { label: Label, name: label, widget: string }
-              - { label: Link (href), name: href, widget: string }
+              - label: Label
+                name: label
+                widget: string
+              - label: Link href
+                name: href
+                widget: string
 
           - label: Hero Section
             name: hero
             widget: object
             collapsed: false
             fields:
-              - { label: Tagline (gold italic), name: tagline, widget: string }
-              - { label: Headline line 1, name: headlineLine1, widget: string }
-              - { label: Headline line 2 (gold gradient), name: headlineLine2, widget: string }
-              - { label: Description paragraph, name: description, widget: text }
-              - { label: Primary button label, name: primaryButtonLabel, widget: string }
-              - { label: Primary button link, name: primaryButtonHref, widget: string }
-              - { label: Secondary button label, name: secondaryButtonLabel, widget: string }
-              - { label: Secondary button link, name: secondaryButtonHref, widget: string }
-              - { label: Background image, name: image, widget: image }
+              - label: Tagline
+                name: tagline
+                widget: string
+              - label: Headline line 1
+                name: headlineLine1
+                widget: string
+              - label: Headline line 2
+                name: headlineLine2
+                widget: string
+              - label: Description paragraph
+                name: description
+                widget: text
+              - label: Primary button label
+                name: primaryButtonLabel
+                widget: string
+              - label: Primary button link
+                name: primaryButtonHref
+                widget: string
+              - label: Secondary button label
+                name: secondaryButtonLabel
+                widget: string
+              - label: Secondary button link
+                name: secondaryButtonHref
+                widget: string
+              - label: Background image
+                name: image
+                widget: image
 
           - label: Welcome Section
             name: welcome
             widget: object
             collapsed: true
             fields:
-              - { label: Lead text (bold), name: leadText, widget: string }
-              - { label: Body text, name: bodyText, widget: text }
+              - label: Lead text
+                name: leadText
+                widget: string
+              - label: Body text
+                name: bodyText
+                widget: text
 
-          - label: Banner Section (gold bar)
+          - label: Banner Section
             name: banner
             widget: object
             collapsed: true
             fields:
-              - { label: Banner text, name: text, widget: text }
+              - label: Banner text
+                name: text
+                widget: text
 
-          - label: Offerings Section (3 cards)
+          - label: Offerings Section
             name: offerings
             widget: object
             collapsed: false
             fields:
-              - { label: Eyebrow (small red text), name: eyebrow, widget: string }
-              - { label: Heading, name: heading, widget: string }
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Heading
+                name: heading
+                widget: string
               - label: Cards
                 name: items
                 widget: list
                 summary: '{{fields.title}}'
                 fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Description, name: description, widget: text }
-                  - { label: Image, name: image, widget: image }
-                  - { label: Image alt text, name: alt, widget: string }
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Description
+                    name: description
+                    widget: text
+                  - label: Image
+                    name: image
+                    widget: image
+                  - label: Image alt text
+                    name: alt
+                    widget: string
                   - label: Icon
                     name: icon
                     widget: select
-                    options: ['leaf', 'book', 'heart']
-                    default: 'leaf'
+                    options:
+                      - leaf
+                      - book
+                      - heart
+                    default: leaf
 
-          - label: CTA Section (bottom, dark)
+          - label: CTA Section
             name: cta
             widget: object
             collapsed: true
             fields:
-              - { label: Button label, name: buttonLabel, widget: string }
-              - { label: Button link, name: buttonHref, widget: string }
-              - { label: Heading, name: heading, widget: text }
-              - { label: Background image, name: image, widget: image }
+              - label: Button label
+                name: buttonLabel
+                widget: string
+              - label: Button link
+                name: buttonHref
+                widget: string
+              - label: Heading
+                name: heading
+                widget: text
+              - label: Background image
+                name: image
+                widget: image
