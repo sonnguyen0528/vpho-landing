@@ -40,23 +40,23 @@
     "items": [
       {
         "title": "House Combination Pho",
-        "description": "Sourced locally and prepared daily. We believe that the key to vibrant flavors lies in the quality and freshness of every single herb, vegetable, and cut of meat.",
+        "description": "Phở Đặc Biệt. Filet mignon, beef meatball, brisket, tendon, and tripe with thin rice noodles in a rich beef broth, slow-simmered overnight.",
         "image": "/uploads/fresh-ingredients.jpg",
         "alt": "Traditional Vietnamese pho with fresh herbs",
         "icon": "leaf"
       },
       {
-        "title": "Signature Menu",
-        "description": "From our rich, slow-simmered bone broth to our vibrant fresh spring rolls and hearty rice plates, discover your new favorite traditional dish.",
-        "image": "https://images.unsplash.com/photo-1555126634-323283e090fa?q=80&w=800&auto=format&fit=crop",
-        "alt": "Assorted Vietnamese Dishes",
+        "title": "Signature Rib Bone Pho",
+        "description": "Back rib that's been on the stove for hours, with filet mignon and rice noodles. Meat falls off the bone!",
+        "image": "/uploads/stz06277.png",
+        "alt": "Rib Bone Pho",
         "icon": "book"
       },
       {
-        "title": "Expert Catering",
-        "description": "Bring the unforgettable flavors of Vietnam to your next event. We offer customizable catering packages perfect for corporate events, parties, and family gatherings.",
-        "image": "https://images.unsplash.com/photo-1555244162-803834f87a33?q=80&w=800&auto=format&fit=crop",
-        "alt": "Catering spread",
+        "title": "Party Trays",
+        "description": "Big pans for bigger crowds. Fried rice, spring rolls, pho by the gallon. You bring the party, we pack the food.",
+        "image": "/uploads/chatgpt-image-apr-23-2026-02_35_31-am.png",
+        "alt": "Party Tray ",
         "icon": "heart"
       }
     ]
