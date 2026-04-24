@@ -30,6 +30,52 @@
   "banner": {
     "text": "Fresh & Authentic Vietnamese Food in the Heart of Campbell"
   },
+  "delivery": {
+    "eyebrow": "Order Online",
+    "heading": "Delivered to your door.",
+    "subheading": "Pick your platform — same kitchen, same broth, same care.",
+    "platforms": [
+      {
+        "name": "DoorDash",
+        "href": "https://www.doordash.com/store/vpho-campbell-25055662/",
+        "bg": "#FF3008"
+      },
+      {
+        "name": "Uber Eats",
+        "href": "https://www.ubereats.com/store/v-pho/Rr2rtRtfV7y08XJg9fxZ4w",
+        "bg": "#06C167"
+      },
+      {
+        "name": "GrubHub",
+        "href": "https://www.grubhub.com/restaurant/vpho-930-w-hamilton-ave-campbell/6379544",
+        "bg": "#F63440"
+      }
+    ]
+  },
+  "socialProof": {
+    "eyebrow": "Loved in Campbell",
+    "heading": "Why Locals Keep Coming Back",
+    "stats": [
+      {
+        "platform": "Yelp",
+        "rating": "4.5",
+        "reviews": "219+ reviews",
+        "href": "https://www.yelp.com/biz/vpho-campbell-2"
+      },
+      {
+        "platform": "Google",
+        "rating": "4.6",
+        "reviews": "200+ reviews",
+        "href": "https://g.page/r/CephFwoU6T3gEBM"
+      },
+      {
+        "platform": "Instagram",
+        "rating": null,
+        "reviews": "Follow @vpho_restaurant",
+        "href": "https://www.instagram.com/vpho_restaurant/"
+      }
+    ]
+  },
   "offerings": {
     "eyebrow": "Our Offerings",
     "heading": "Crafted with Passion",
