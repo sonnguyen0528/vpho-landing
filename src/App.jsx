@@ -5,6 +5,7 @@ import WelcomeSection from './components/WelcomeSection'
 import SocialProofSection from './components/SocialProofSection'
 import BannerSection from './components/BannerSection'
 import OfferingsSection from './components/OfferingsSection'
+import PrivateEventsSection from './components/PrivateEventsSection'
 import CTASection from './components/CTASection'
 import Footer from './components/Footer'
 
@@ -18,6 +19,7 @@ export default function App() {
       <SocialProofSection />
       <BannerSection />
       <OfferingsSection />
+      <PrivateEventsSection />
       <CTASection />
       <Footer />
     </div>
