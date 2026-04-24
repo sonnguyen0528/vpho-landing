@@ -3,10 +3,8 @@ import site from '../content/site.json'
 
 const quickLinks = [
   { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#' },
   { label: 'Hungry? Call us!', href: 'tel:+14083782234' },
-  { label: 'Catering Services', href: '#' },
-  { label: 'Contact Us', href: '#' },
+  { label: 'Party Trays Now Available', href: '/menu/#catering' },
 ]
 
 const LocationIcon = (props) => (
