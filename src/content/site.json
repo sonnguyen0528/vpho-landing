@@ -78,7 +78,7 @@
     }
   ],
   "cta": {
-    "buttonLabel": "Call to Reserve",
+    "buttonLabel": "Hungry? Call us NOW!",
     "buttonHref": "tel:+14083782234",
     "heading": "Gluten-Free & Vegan Options Available",
     "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=2000&auto=format&fit=crop"
@@ -87,7 +87,7 @@
     "primaryButtonLabel": "Explore Menu",
     "headlineLine1": "Real",
     "headlineLine2": "Phở",
-    "secondaryButtonLabel": "Call to Reserve",
+    "secondaryButtonLabel": "Hungry? Call us NOW!",
     "tagline": "A family kitchen in Campbell",
     "secondaryButtonHref": "tel:+14083782234",
     "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop",
