@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPhonominal | Vietnamese Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F2EFE8;
+            --brand-orange: #C6531A;
+            --brand-pink: #E5C4BE;
+            --brand-green: #1F4D3A;
+            --text-dark: #2A1610;
+            --text-muted: #6B554A;
+            --line-color: rgba(42, 22, 16, 0.15);
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-ui: 'DM Sans', sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-ui);
+            line-height: 1.4;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        ::selection { background: var(--brand-orange); color: var(--bg-cream); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1; color: var(--brand-orange); }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: var(--space-xl) auto var(--space-lg);
+            width: fit-content;
+            color: var(--brand-orange);
+        }
+        .logo-v { font-size: 14vw; line-height: 0.8; margin-right: -2vw; position: relative; z-index: 2; }
+        .logo-pho { display: flex; flex-direction: column; font-size: 6vw; line-height: 0.75; letter-spacing: -0.05em; position: relative; z-index: 1; }
+        .logo-pill {
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid var(--brand-orange);
+            border-radius: 50px;
+            padding: 4px 10px;
+            font-family: var(--font-ui);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: var(--bg-cream);
+            z-index: 3;
+            white-space: nowrap;
+        }
+        .brand-script {
+            text-align: center;
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--brand-orange);
+            margin-top: -1rem;
+            margin-bottom: 0.5rem;
+        }
+        .brand-tagline {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            position: relative;
+        }
+
+        .nav-sidebar {
+            position: sticky;
+            top: var(--space-lg);
+            height: max-content;
+            border-right: 1px solid var(--line-color);
+            padding-right: var(--space-md);
+        }
+        .nav-list { list-style: none; }
+        .nav-item { margin-bottom: var(--space-sm); }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--brand-orange); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0%; height: 1px; background-color: var(--brand-orange);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .menu-section { margin-bottom: var(--space-xl); scroll-margin-top: var(--space-lg); }
+        .section-header {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: var(--space-xs);
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .section-header span {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .section-intro {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+            max-width: 70%;
+        }
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md) var(--space-lg);
+        }
+        .item { display: flex; flex-direction: column; }
+        .item-top { display: flex; align-items: baseline; margin-bottom: 4px; }
+        .item-num {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--brand-orange);
+            margin-right: 0.5rem;
+            font-weight: 600;
+        }
+        .item-name { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-dark); font-weight: 600; }
+        .item-dots { flex-grow: 1; border-bottom: 1px dotted var(--line-color); margin: 0 10px; position: relative; top: -6px; }
+        .item-price { font-family: var(--font-ui); font-size: 1rem; font-weight: 500; color: var(--brand-orange); white-space: nowrap; }
+        .item-desc { font-size: 0.85rem; color: var(--text-muted); max-width: 90%; }
+
+        .addon-box {
+            margin-top: var(--space-md);
+            border: 1px solid var(--line-color);
+            padding: var(--space-sm) var(--space-md);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem var(--space-md);
+        }
+        .addon-box .addon-title {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .addon-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+        .addon-row .addon-price { color: var(--brand-orange); font-weight: 500; }
+
+        .special-section {
+            background-color: var(--brand-pink);
+            padding: var(--space-lg);
+            border-radius: 2px;
+            margin: var(--space-xl) 0;
+            position: relative;
+            box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4), inset -1px -1px 4px rgba(0,0,0,0.05), 0 10px 30px rgba(42, 22, 16, 0.05);
+        }
+        .special-section h2 {
+            color: var(--text-dark);
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+        .diy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
+        .diy-category { border-top: 1px solid rgba(42, 22, 16, 0.2); padding-top: var(--space-sm); }
+        .diy-category h4 {
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-dark);
+            margin-bottom: var(--space-sm);
+        }
+        .diy-subhead {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--brand-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.6rem;
+            margin-bottom: 0.3rem;
+        }
+        .diy-options { list-style: none; font-size: 0.9rem; color: var(--text-dark); }
+        .diy-options li { margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .diy-options li::before {
+            content: '';
+            display: inline-block;
+            width: 4px; height: 4px;
+            background: var(--brand-orange);
+            border-radius: 50%;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .diy-options .diy-name { flex-grow: 1; }
+        .diy-options .diy-up { color: var(--brand-orange); font-size: 0.8rem; font-weight: 500; }
+        .broth-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: var(--space-sm);
+            padding-top: var(--space-sm);
+            border-top: 1px solid rgba(42, 22, 16, 0.2);
+        }
+        .broth-pill {
+            border: 1px solid var(--text-dark);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .catering-section {
+            background-color: var(--brand-green);
+            color: var(--bg-cream);
+            padding: var(--space-lg);
+            border-radius: 2px;
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+        .catering-section h2 {
+            color: var(--bg-cream);
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+        }
+        .catering-section p { font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-sm); opacity: 0.9; }
+        .catering-section .catering-cta { font-style: italic; opacity: 0.8; font-size: 0.95rem; }
+
+        .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md) var(--space-lg); }
+        .app-grid .item-list { display: contents; }
+
+        .bev-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+        .bev-group { margin-bottom: var(--space-md); }
+        .bev-group h3 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .bev-group h3 .bev-base {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--brand-orange);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        .bev-list { font-size: 0.95rem; list-style: none; }
+        .bev-list li {
+            margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+        .bev-list li .bev-name { flex-grow: 1; }
+        .bev-list li .bev-price { color: var(--brand-orange); font-weight: 500; white-space: nowrap; }
+        .bev-list .star::before { content: '★ '; color: var(--brand-orange); }
+        .bev-list.two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--space-md); }
+
+        .topping-box {
+            margin-top: var(--space-sm);
+            border: 1px solid var(--line-color);
+            padding: var(--space-sm) var(--space-md);
+        }
+        .topping-box .topping-title {
+            text-align: center;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+        .topping-box ul { list-style: none; }
+        .topping-box li { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.2rem 0; }
+        .topping-box li .topping-price { color: var(--brand-orange); font-weight: 500; }
+
+        .hero-img-container { width: 100%; height: 60vh; margin-bottom: var(--space-xl); position: relative; overflow: hidden; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.3) contrast(1.1) brightness(0.9); }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-cream) 0%, transparent 40%); }
+        .inline-img { width: 100%; height: 300px; object-fit: cover; margin: var(--space-md) 0; filter: sepia(0.2) contrast(1.1); }
+
+        footer {
+            border-top: 1px solid var(--line-color);
+            padding: var(--space-lg) 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: var(--space-xl);
+        }
+        footer .foot-row {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+            flex-wrap: wrap;
+        }
+        footer .foot-note {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--text-muted);
+            opacity: 0.85;
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 1024px) {
+            .menu-grid { grid-template-columns: 200px 1fr; }
+            .diy-grid { grid-template-columns: repeat(2, 1fr); }
+            .app-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .nav-sidebar {
+                position: static; border-right: none;
+                border-bottom: 1px solid var(--line-color);
+                padding-bottom: var(--space-sm);
+                margin-bottom: var(--space-lg);
+                overflow-x: auto; white-space: nowrap;
+            }
+            .nav-list { display: flex; gap: var(--space-sm); }
+            .item-list, .bev-container, .app-grid, .addon-box, .bev-list.two-col { grid-template-columns: 1fr; display: grid; }
+            .logo-v { font-size: 24vw; }
+            .logo-pho { font-size: 10vw; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-img-container">
+        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2000&auto=format&fit=crop" alt="Steaming Pho Bowl" class="hero-img">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-lockup">
+                <div class="logo-v">V</div>
+                <div class="logo-pho">
+                    <span>PH</span>
+                    <span>O</span>
+                </div>
+                <div class="logo-pill">VPhonominal</div>
+            </div>
+            <p class="brand-tagline">Vietnamese Kitchen &nbsp;·&nbsp; v-pho.com</p>
+        </header>
+
+        <div class="menu-grid">
+            <aside class="nav-sidebar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#pho" class="nav-link">Phở</a></li>
+                    <li class="nav-item"><a href="#diy" class="nav-link">D.I.Y. Phở</a></li>
+                    <li class="nav-item"><a href="#appetizers" class="nav-link">Appetizers</a></li>
+                    <li class="nav-item"><a href="#dimsum" class="nav-link">Dim Sum</a></li>
+                    <li class="nav-item"><a href="#catering" class="nav-link">Catering</a></li>
+                    <li class="nav-item"><a href="#rice" class="nav-link">Rice Plates</a></li>
+                    <li class="nav-item"><a href="#noodles" class="nav-link">Noodle Plates</a></li>
+                    <li class="nav-item"><a href="#smoothies" class="nav-link">Smoothies</a></li>
+                    <li class="nav-item"><a href="#boba" class="nav-link">Boba Tea</a></li>
+                    <li class="nav-item"><a href="#drinks" class="nav-link">Coffee &amp; Drinks</a></li>
+                </ul>
+            </aside>
+
+            <main>
+
+                <section id="pho" class="menu-section">
+                    <h2 class="section-header">Phở <span>Legendary</span></h2>
+                    <p class="section-intro">Traditional Vietnamese rice noodle soup served with onions, green onions, and cilantro in our aromatic beef broth.</p>
+                    <div class="item-list">
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">1.</span><span class="item-name">Phở Đặc Biệt</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
+                            <p class="item-desc">Rare steak, brisket, tendon, tripe, meatball.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">2.</span><span class="item-name">Phở Tái</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
+                            <p class="item-desc">Rare steak.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">3.</span><span class="item-name">Phở Tái Nạm</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
+                            <p class="item-desc">Rare steak, well-done flank.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">4.</span><span class="item-name">Phở Tái Bò Viên</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
+                            <p class="item-desc">Rare steak, meatball.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">5.</span><span class="item-name">Phở Tái Gân</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
+                            <p class="item-desc">Rare steak, tendon.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">6.</span><span class="item-name">Phở Tái Sách</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
+                            <p class="item-desc">Rare steak, tripe.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">7.</span><span class="item-name">Phở Bò Viên</span><span class="item-dots"></span><span class="item-price">16.49</span></div>
+                            <p class="item-desc">Meatball.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">8.</span><span class="item-name">Phở Gà</span><span class="item-dots"></span><span class="item-price">16.49</span></div>
+                            <p class="item-desc">Chicken.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">9.</span><span class="item-name">Phở Đồ Biển</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
+                            <p class="item-desc">Shrimp, squid, fishball.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">10.</span><span class="item-name">Phở Rau Cải</span><span class="item-dots"></span><span class="item-price">15.49</span></div>
+                            <p class="item-desc">Vegetarian.</p>
+                        </div>
+                    </div>
+
+                    <div class="addon-box">
+                        <div class="addon-title">Add-Ons</div>
+                        <div class="addon-row"><span>Extra Meat</span><span class="addon-price">3.50</span></div>
+                        <div class="addon-row"><span>Extra Noodle</span><span class="addon-price">2.00</span></div>
+                        <div class="addon-row"><span>Extra Broth</span><span class="addon-price">2.00</span></div>
+                        <div class="addon-row"><span>Meatball (3)</span><span class="addon-price">2.50</span></div>
+                        <div class="addon-row"><span>Tendon</span><span class="addon-price">2.50</span></div>
+                        <div class="addon-row"><span>Tripes</span><span class="addon-price">2.50</span></div>
+                    </div>
+                </section>
+
+
+                <section id="diy" class="special-section menu-section">
+                    <h2>D.I.Y. Phở</h2>
+                    <div class="diy-grid">
+                        <div class="diy-category">
+                            <h4>I. Choose Noodle Type</h4>
+                            <ul class="diy-options">
+                                <li><span class="diy-name">Thin Noodles</span><span class="diy-up">17.85</span></li>
+                                <li><span class="diy-name">Fresh Noodles</span><span class="diy-up">18.80</span></li>
+                            </ul>
+                        </div>
+                        <div class="diy-category">
+                            <h4>II. Choose Your Protein</h4>
+                            <p class="diy-subhead">Seafood</p>
+                            <ul class="diy-options">
+                                <li><span class="diy-name">Shrimp</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">Fishball w/ Roe</span><span class="diy-up">+0.50</span></li>
+                                <li><span class="diy-name">Squid</span><span class="diy-up">+1.50</span></li>
+                            </ul>
+                            <p class="diy-subhead">Poultry</p>
+                            <ul class="diy-options"><li><span class="diy-name">Chicken Breast</span></li></ul>
+                            <p class="diy-subhead">Meatless</p>
+                            <ul class="diy-options"><li><span class="diy-name">Fried Tofu</span></li></ul>
+                        </div>
+                        <div class="diy-category">
+                            <h4>III. Choose Your Veggies</h4>
+                            <ul class="diy-options">
+                                <li><span class="diy-name">Green Onion</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">White Onion</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">Cabbage</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">Carrot</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">Chayote</span><span class="diy-up">+0.45</span></li>
+                                <li><span class="diy-name">Broccoli</span><span class="diy-up">+0.75</span></li>
+                                <li><span class="diy-name">Mushroom</span><span class="diy-up">+0.75</span></li>
+                                <li><span class="diy-name">Daikon</span><span class="diy-up">+0.75</span></li>
+                                <li><span class="diy-name">Bok Choy</span><span class="diy-up">+0.85</span></li>
+                            </ul>
+                        </div>
+                        <div class="diy-category">
+                            <h4>IV. Choose Your Broth</h4>
+                            <div class="broth-row">
+                                <span class="broth-pill">Chicken</span>
+                                <span class="broth-pill">Beef</span>
+                                <span class="broth-pill">Veggie</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000&auto=format&fit=crop" alt="Appetizers" class="inline-img">
+
+
+                <section id="appetizers" class="menu-section">
+                    <h2 class="section-header">Appetizers <span>To Share</span></h2>
+                    <div class="app-grid">
+                        <div class="item"><div class="item-top"><span class="item-num">1.</span><span class="item-name">Saigon Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">2.</span><span class="item-name">Wings Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">3.</span><span class="item-name">Egg Rolls (4)</span><span class="item-dots"></span><span class="item-price">11.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">4.</span><span class="item-name">Spring Rolls (2)</span><span class="item-dots"></span><span class="item-price">10.99</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">5.</span><span class="item-name">Fried Tofu</span><span class="item-dots"></span><span class="item-price">10.19</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">6.</span><span class="item-name">Avocado Cheese Rangoon (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">7.</span><span class="item-name">Cajun French Fries</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">8.</span><span class="item-name">Pot Stickers (5)</span><span class="item-dots"></span><span class="item-price">17.59</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">9.</span><span class="item-name">Crispy Mushroom</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">10.</span><span class="item-name">Deep Fried Wonton (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">11.</span><span class="item-name">V-Pao Pao</span><span class="item-dots"></span><span class="item-price">12.99</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">12.</span><span class="item-name">V-Tastic Sampler</span><span class="item-dots"></span><span class="item-price">17.59</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">13.</span><span class="item-name">Calamari</span><span class="item-dots"></span><span class="item-price">13.49</span></div></div>
+                    </div>
+                </section>
+
+
+                <section id="dimsum" class="menu-section">
+                    <h2 class="section-header">Dim Sum <span>Steamed &amp; Fried</span></h2>
+                    <div class="item-list">
+                        <div class="item"><div class="item-top"><span class="item-num">14.</span><span class="item-name">Chicken Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">15.</span><span class="item-name">Vegetables Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">16.</span><span class="item-name">Pork Steamed Bao (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">17.</span><span class="item-name">Shrimp &amp; Bamboo Ha Gao (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">18.</span><span class="item-name">Shanghai Pork Dumplings (6)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">19.</span><span class="item-name">Pork / Chicken Siu Mai (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">20.</span><span class="item-name">Steamed Dim Sum Platter (5)</span><span class="item-dots"></span><span class="item-price">12.25</span></div></div>
+                    </div>
+                </section>
+
+
+                <section id="catering" class="catering-section menu-section">
+                    <h2>Catering Fried Rice</h2>
+                    <p>Perfect for any event or gathering. Made fresh with quality ingredients.</p>
+                    <p class="catering-cta">Ask our staff for catering options.</p>
+                </section>
+
+
+                <section id="rice" class="menu-section">
+                    <h2 class="section-header">Rice Plates <span>Wok &amp; Grill</span></h2>
+                    <div class="item-list">
+                        <div class="item"><div class="item-top"><span class="item-num">39.</span><span class="item-name">Supreme Shaken Beef Fried Rice</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">40.</span><span class="item-name">Vietnamese Shaken Beef</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">41.</span><span class="item-name">Korean BBQ Short Ribs</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">42.</span><span class="item-name">Orange Chicken</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">43.</span><span class="item-name">Grilled Meat &amp; Egg Rice</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">44.</span><span class="item-name">House Fried Rice</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">45.</span><span class="item-name">Crispy Chicken Fried Rice</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">46.</span><span class="item-name">Green Glow Rice</span></div></div>
+                    </div>
+                </section>
+
+
+                <section id="noodles" class="menu-section">
+                    <h2 class="section-header">Noodle Plates <span>Stir-Fry</span></h2>
+                    <div class="item-list">
+                        <div class="item"><div class="item-top"><span class="item-num">47.</span><span class="item-name">Rice Noodles "Vermicelli"</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">48.</span><span class="item-name">Garlic Noodles</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">49.</span><span class="item-name">Shake-Shake Garlic Noodles</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">50.</span><span class="item-name">Beef Stir-Fry Noodles</span></div></div>
+                    </div>
+                </section>
+
+
+                <section id="smoothies" class="menu-section">
+                    <h2 class="section-header">Smoothies <span>$7.45 each</span></h2>
+                    <ul class="bev-list two-col">
+                        <li><span class="bev-name">Blueberry</span></li>
+                        <li><span class="bev-name">Avocado</span></li>
+                        <li><span class="bev-name">Strawnana</span></li>
+                        <li><span class="bev-name">Taro <em style="font-size:0.8em; color:var(--brand-orange);">— NEW</em></span></li>
+                        <li><span class="bev-name">Mango</span></li>
+                        <li><span class="bev-name">Coco</span></li>
+                        <li><span class="bev-name">Strawberry</span></li>
+                    </ul>
+                </section>
+
+
+                <section id="boba" class="menu-section">
+                    <h2 class="section-header">Boba Tea <span>$7.45 each</span></h2>
+                    <ul class="bev-list two-col">
+                        <li><span class="bev-name star">V-Milk Tea</span></li>
+                        <li><span class="bev-name">Jasmine Milk Tea</span></li>
+                        <li><span class="bev-name">Mashed Cheese Milk Tea</span></li>
+                        <li><span class="bev-name">Thai Boba Ice Tea</span></li>
+                        <li><span class="bev-name">Peach Tea</span></li>
+                        <li><span class="bev-name">Lychee Tea</span></li>
+                        <li><span class="bev-name">Green Apple Tea</span></li>
+                        <li><span class="bev-name">Honeydew Tea</span></li>
+                        <li><span class="bev-name">Strawberry Tea</span></li>
+                        <li><span class="bev-name">Pineapple Tea</span></li>
+                        <li><span class="bev-name">Mango Tea</span></li>
+                        <li><span class="bev-name">Guava Glow</span></li>
+                        <li><span class="bev-name">Peachy Mango Pop</span></li>
+                        <li><span class="bev-name">Strawberry Macchiato</span></li>
+                        <li><span class="bev-name">Mango Macchiato</span></li>
+                        <li><span class="bev-name">Black Tea Macchiato</span></li>
+                        <li><span class="bev-name">Jasmine Macchiato</span></li>
+                    </ul>
+
+                    <div class="topping-box">
+                        <div class="topping-title">Toppings</div>
+                        <ul>
+                            <li><span>Boba</span><span class="topping-price">+0.50</span></li>
+                            <li><span>Crystal Boba</span><span class="topping-price">+1.00</span></li>
+                            <li><span>Aloe Vera</span><span class="topping-price">+1.00</span></li>
+                            <li><span>Mango Jelly</span><span class="topping-price">+0.75</span></li>
+                            <li><span>Rainbow Jelly</span><span class="topping-price">+0.75</span></li>
+                            <li><span>Lychee Jelly</span><span class="topping-price">+0.75</span></li>
+                            <li><span>Sea Salted Foam</span><span class="topping-price">+1.00</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <section id="drinks" class="menu-section">
+                    <h2 class="section-header">Coffee &amp; Drinks <span>Refreshments</span></h2>
+
+                    <div class="bev-container">
+                        <div class="bev-group">
+                            <h3>Fresh Drinks</h3>
+                            <ul class="bev-list">
+                                <li><span class="bev-name star">Squeezed Orange Juice</span><span class="bev-price">7.45</span></li>
+                                <li><span class="bev-name star">Fresh Coconut Juice</span><span class="bev-price">7.45</span></li>
+                                <li><span class="bev-name star">Snowy Lemonade</span><span class="bev-price">8.00</span></li>
+                                <li><span class="bev-name">Lemonade</span><span class="bev-price">4.99</span></li>
+                                <li><span class="bev-name">Strawberry Lemonade</span><span class="bev-price">5.99</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="bev-group">
+                            <h3>Coffee</h3>
+                            <ul class="bev-list">
+                                <li><span class="bev-name">Vietnamese Iced Coffee</span><span class="bev-price">6.48</span></li>
+                                <li><span class="bev-name">Vietnamese White Iced Coffee</span><span class="bev-price">7.29</span></li>
+                                <li><span class="bev-name">Vietnamese Black Coffee</span><span class="bev-price">6.48</span></li>
+                                <li><span class="bev-name">Vietnamese Drip Coffee (Hot)</span><span class="bev-price">6.48</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="bev-group">
+                            <h3>Soft Drinks</h3>
+                            <ul class="bev-list">
+                                <li><span class="bev-name">Coke / Diet Coke / Pepsi / Diet Pepsi / Sprite / Dr Pepper / Root Beer</span><span class="bev-price">3.49</span></li>
+                                <li><span class="bev-name">Tea (Cup, Iced or Hot)</span><span class="bev-price">2.49</span></li>
+                                <li><span class="bev-name">Tea Pot</span><span class="bev-price">8.79</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot-row">
+            <span>@VPHO_RESTAURANT</span>
+            <span>(408) 378-2234</span>
+            <span>WWW.V-PHO.COM</span>
+        </div>
+        <div class="foot-row">
+            <span>930 W Hamilton Ave, Ste 110, Campbell, CA 95008</span>
+        </div>
+        <p class="foot-note">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.menu-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

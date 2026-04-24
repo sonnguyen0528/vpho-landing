@@ -2,11 +2,11 @@ import { FooterSocialIcons } from './SocialIcons'
 import site from '../content/site.json'
 
 const quickLinks = [
-  'Home',
-  'About Us',
-  'Our Menu',
-  'Catering Services',
-  'Contact Us',
+  { label: 'Home', href: '#' },
+  { label: 'About Us', href: '#' },
+  { label: 'Hungry? Call us!', href: 'tel:+14083782234' },
+  { label: 'Catering Services', href: '#' },
+  { label: 'Contact Us', href: '#' },
 ]
 
 const LocationIcon = (props) => (
@@ -97,12 +97,12 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3 text-sm">
             {quickLinks.map((link) => (
-              <li key={link}>
+              <li key={link.label}>
                 <a
-                  href="#"
+                  href={link.href}
                   className="hover:text-brand-gold transition-colors"
                 >
-                  {link}
+                  {link.label}
                 </a>
               </li>
             ))}

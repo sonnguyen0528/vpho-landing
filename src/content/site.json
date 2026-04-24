@@ -92,6 +92,6 @@
     "secondaryButtonHref": "tel:+14083782234",
     "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop",
     "description": "We grew up eating this food. Now we cook it for you. Broth simmers overnight, herbs come in fresh every morning. Come hungry.",
-    "primaryButtonHref": "#cta"
+    "primaryButtonHref": "/menu/"
   }
 }
