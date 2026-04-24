@@ -85,13 +85,13 @@
   },
   "hero": {
     "primaryButtonLabel": "Explore Menu",
-    "headlineLine1": "Immersive",
-    "headlineLine2": "Flavors",
-    "secondaryButtonLabel": "Book a Table",
-    "tagline": "Discover the true taste of Vietnam",
-    "secondaryButtonHref": "#contact",
+    "headlineLine1": "Real",
+    "headlineLine2": "Phở",
+    "secondaryButtonLabel": "Call to Reserve",
+    "tagline": "A family kitchen in Campbell",
+    "secondaryButtonHref": "tel:+14083782234",
     "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2874&auto=format&fit=crop",
-    "description": "Experience authentic recipes passed down through generations, served fresh in the heart of Campbell.",
+    "description": "We grew up eating this food. Now we cook it for you. Broth simmers overnight, herbs come in fresh every morning. Come hungry.",
     "primaryButtonHref": "#cta"
   }
 }
