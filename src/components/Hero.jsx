@@ -42,8 +42,8 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce text-white/70">
-        <span className="text-xs uppercase tracking-widest mb-2 font-semibold [text-indent:0.2em]">
+      <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center animate-bounce text-white/70 pointer-events-none">
+        <span className="text-xs uppercase mb-2 font-semibold" style={{ letterSpacing: '0.2em', textIndent: '0.2em' }}>
           Scroll
         </span>
         <svg
