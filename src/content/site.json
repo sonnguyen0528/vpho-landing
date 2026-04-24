@@ -34,6 +34,8 @@
     "eyebrow": "Order Online",
     "heading": "Delivered to your door.",
     "subheading": "Pick your platform — same kitchen, same broth, same care.",
+    "rating": "4.6",
+    "ratingNote": "average rating across all delivery platforms",
     "platforms": [
       {
         "name": "DoorDash",
