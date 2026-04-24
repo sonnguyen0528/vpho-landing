@@ -13,6 +13,11 @@
     "leadText": "Welcome to VPHO",
     "bodyText": "We're a family-run Vietnamese spot in Campbell. We cook the way we grew up eating. Broth takes twelve hours. Herbs come in fresh every morning. No shortcuts, no tricks, just real phở. Come try!"
   },
+  "announcement": {
+    "enabled": true,
+    "headline": "Your Birthday, Our Treat — 5% OFF your entire order. Show ID on your birthday at checkout.",
+    "terms": "Valid on your birthday only with photo ID · Excludes alcohol · Dine-in & takeout · One per guest per year · Cannot combine with other offers"
+  },
   "nav": [
     {
       "label": "Home",

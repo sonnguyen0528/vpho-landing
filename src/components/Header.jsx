@@ -4,7 +4,7 @@ import site from '../content/site.json'
 export default function Header() {
   const { nav } = site
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-gradient-to-b from-black/80 via-black/40 to-transparent pt-6 pb-12 px-8 lg:px-16">
+    <header className="w-full bg-gradient-to-b from-black/80 via-black/40 to-transparent pt-6 pb-12 px-8 lg:px-16">
       <nav className="w-full flex items-center justify-between">
         <ul className="hidden lg:flex items-center gap-8 text-white text-sm font-semibold tracking-widest uppercase">
           {nav.map((link) => (
