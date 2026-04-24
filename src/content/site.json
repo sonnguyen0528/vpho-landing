@@ -19,16 +19,12 @@
       "href": "#"
     },
     {
-      "label": "About Us",
-      "href": "#"
+      "label": "Menu",
+      "href": "/menu/"
     },
     {
       "label": "Party Trays",
-      "href": "#"
-    },
-    {
-      "label": "Contact Us",
-      "href": "#"
+      "href": "/menu/#catering"
     }
   ],
   "banner": {
