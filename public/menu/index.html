@@ -239,6 +239,14 @@
         }
         .diy-options .diy-name { flex-grow: 1; }
         .diy-options .diy-up { color: var(--brand-orange); font-size: 0.8rem; font-weight: 500; }
+        .diy-price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--brand-orange);
+        }
         .broth-row {
             display: flex;
             justify-content: space-around;
@@ -270,6 +278,42 @@
         }
         .catering-section p { font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-sm); opacity: 0.9; }
         .catering-section .catering-cta { font-style: italic; opacity: 0.8; font-size: 0.95rem; }
+
+        .booze-section {
+            background-color: var(--text-dark);
+            color: var(--bg-cream);
+            padding: var(--space-lg);
+            border-radius: 2px;
+            margin: var(--space-xl) 0;
+        }
+        .booze-section .section-header { color: var(--brand-pink); border-bottom-color: rgba(242, 239, 232, 0.2); }
+        .booze-section .section-header span { color: var(--bg-cream); opacity: 0.7; }
+        .booze-section h3 { color: var(--brand-pink); }
+        .booze-section .item-name { color: var(--bg-cream); }
+        .booze-section .item-desc { color: rgba(242, 239, 232, 0.7); }
+        .booze-section .item-dots { border-bottom-color: rgba(242, 239, 232, 0.25); }
+        .booze-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+        .booze-col h3 {
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+            border-bottom: 1px solid rgba(242, 239, 232, 0.2);
+            padding-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .booze-col h3 .booze-base {
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            color: var(--brand-pink);
+            font-weight: 500;
+        }
+        .booze-list { list-style: none; margin-bottom: var(--space-lg); }
+        .booze-list li { margin-bottom: 0.7rem; }
+        .booze-list .booze-name { font-family: var(--font-display); font-size: 1.25rem; color: var(--bg-cream); }
+        .booze-list .booze-desc { font-size: 0.8rem; color: rgba(242, 239, 232, 0.7); }
+        .booze-flat { list-style: none; columns: 2; column-gap: var(--space-md); }
+        .booze-flat li { font-size: 0.95rem; margin-bottom: 0.4rem; break-inside: avoid; }
 
         .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md) var(--space-lg); }
         .app-grid .item-list { display: contents; }
@@ -360,6 +404,7 @@
             .menu-grid { grid-template-columns: 200px 1fr; }
             .diy-grid { grid-template-columns: repeat(2, 1fr); }
             .app-grid { grid-template-columns: repeat(2, 1fr); }
+            .booze-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .menu-grid { grid-template-columns: 1fr; }
@@ -372,6 +417,7 @@
             }
             .nav-list { display: flex; gap: var(--space-sm); }
             .item-list, .bev-container, .app-grid, .addon-box, .bev-list.two-col { grid-template-columns: 1fr; display: grid; }
+            .booze-flat { columns: 1; }
             .logo-v { font-size: 24vw; }
             .logo-pho { font-size: 10vw; }
         }
@@ -400,75 +446,162 @@
         <div class="menu-grid">
             <aside class="nav-sidebar">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#pho" class="nav-link">Phở</a></li>
-                    <li class="nav-item"><a href="#diy" class="nav-link">D.I.Y. Phở</a></li>
                     <li class="nav-item"><a href="#appetizers" class="nav-link">Appetizers</a></li>
                     <li class="nav-item"><a href="#dimsum" class="nav-link">Dim Sum</a></li>
+                    <li class="nav-item"><a href="#pho" class="nav-link">Phở Favorites</a></li>
+                    <li class="nav-item"><a href="#diy" class="nav-link">D.I.Y. Phở</a></li>
+                    <li class="nav-item"><a href="#banhmi" class="nav-link">Banh Mi</a></li>
                     <li class="nav-item"><a href="#catering" class="nav-link">Party Trays</a></li>
                     <li class="nav-item"><a href="#rice" class="nav-link">Rice Plates</a></li>
                     <li class="nav-item"><a href="#noodles" class="nav-link">Noodle Plates</a></li>
                     <li class="nav-item"><a href="#smoothies" class="nav-link">Smoothies</a></li>
                     <li class="nav-item"><a href="#boba" class="nav-link">Boba Tea</a></li>
                     <li class="nav-item"><a href="#drinks" class="nav-link">Coffee &amp; Drinks</a></li>
+                    <li class="nav-item"><a href="#bar" class="nav-link">Fishbowls &amp; Cocktails</a></li>
                 </ul>
             </aside>
 
             <main>
 
-                <section id="pho" class="menu-section">
-                    <h2 class="section-header">Phở <span>Legendary</span></h2>
-                    <p class="section-intro">Traditional Vietnamese rice noodle soup served with onions, green onions, and cilantro in our aromatic beef broth.</p>
-                    <div class="item-list">
+                <section id="appetizers" class="menu-section">
+                    <h2 class="section-header">Appetizers <span>To Share</span></h2>
+                    <div class="app-grid">
                         <div class="item">
-                            <div class="item-top"><span class="item-num">1.</span><span class="item-name">Phở Đặc Biệt</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
-                            <p class="item-desc">Rare steak, brisket, tendon, tripe, meatball.</p>
+                            <div class="item-top"><span class="item-num">1.</span><span class="item-name">Saigon Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div>
+                            <p class="item-desc">Crispy fried chicken wings tossed in a sweet, butter, and mildly spicy fish sauce glaze.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">2.</span><span class="item-name">Phở Tái</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
-                            <p class="item-desc">Rare steak.</p>
+                            <div class="item-top"><span class="item-num">2.</span><span class="item-name">Wings Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div>
+                            <p class="item-desc">Crispy fried chicken wings tossed in Lemon Pepper / Teriyaki / Buffalo Garlic / BBQ / Honey Hot / Korean BBQ.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">3.</span><span class="item-name">Phở Tái Nạm</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
-                            <p class="item-desc">Rare steak, well-done flank.</p>
+                            <div class="item-top"><span class="item-num">3.</span><span class="item-name">Egg Rolls (4)</span><span class="item-dots"></span><span class="item-price">11.49</span></div>
+                            <p class="item-desc">Crispy rolls filled with pork, chicken, taro, carrot, glass noodles, and mushrooms.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">4.</span><span class="item-name">Phở Tái Bò Viên</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
-                            <p class="item-desc">Rare steak, meatball.</p>
+                            <div class="item-top"><span class="item-num">4.</span><span class="item-name">Spring Roll (2)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
+                            <p class="item-desc">Rice paper with shrimp &amp; pork, and mixed vegetables served with peanut butter.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">5.</span><span class="item-name">Phở Tái Gân</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
-                            <p class="item-desc">Rare steak, tendon.</p>
+                            <div class="item-top"><span class="item-num">5.</span><span class="item-name">Fried Tofu</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
+                            <p class="item-desc">Crispy tofu, deep-fried with Thai basil for a simple, tasty street food snack.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">6.</span><span class="item-name">Phở Tái Sách</span><span class="item-dots"></span><span class="item-price">16.79</span></div>
-                            <p class="item-desc">Rare steak, tripe.</p>
+                            <div class="item-top"><span class="item-num">6.</span><span class="item-name">Avocado Cheese Rangoon (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
+                            <p class="item-desc">Deep-fried wonton wrapper filled with avocado and cream cheese.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">7.</span><span class="item-name">Phở Bò Viên</span><span class="item-dots"></span><span class="item-price">16.49</span></div>
-                            <p class="item-desc">Meatball.</p>
+                            <div class="item-top"><span class="item-num">7.</span><span class="item-name">Cajun French Fries</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
+                            <p class="item-desc">Skinny fries tossed with fresh herb, served with ketchup.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">8.</span><span class="item-name">Phở Gà</span><span class="item-dots"></span><span class="item-price">16.49</span></div>
-                            <p class="item-desc">Chicken.</p>
+                            <div class="item-top"><span class="item-num">8.</span><span class="item-name">Pot Stickers (5)</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
+                            <p class="item-desc">Ground chicken mixed with vegetable.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">9.</span><span class="item-name">Phở Đồ Biển</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
-                            <p class="item-desc">Shrimp, squid, fishball.</p>
+                            <div class="item-top"><span class="item-num">9.</span><span class="item-name">Calamari</span><span class="item-dots"></span><span class="item-price">13.49</span></div>
+                            <p class="item-desc">Fried calamari tossed with garlic butter, jalapenos, white onion, spicy mayo sauce.</p>
                         </div>
                         <div class="item">
-                            <div class="item-top"><span class="item-num">10.</span><span class="item-name">Phở Rau Cải</span><span class="item-dots"></span><span class="item-price">15.49</span></div>
-                            <p class="item-desc">Vegetarian.</p>
+                            <div class="item-top"><span class="item-num">10.</span><span class="item-name">Crispy Mushroom</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
+                            <p class="item-desc">Crispy mushroom tossed with garlic butter sauce, jalapeños, and white onion.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">11.</span><span class="item-name">Deep Fried Wonton (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
+                            <p class="item-desc">Crispy wonton skin filled with shrimp and ground chicken, perfectly seasoned for a savory crunch.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">12.</span><span class="item-name">Taro Shrimp Cake (2)</span><span class="item-dots"></span><span class="item-price">7.79</span></div>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">13.</span><span class="item-name">V-Tastic Sampler</span><span class="item-dots"></span><span class="item-price">17.59</span></div>
+                            <p class="item-desc">1 spring roll, 1 egg roll, 2 cheese rangoon, 2 shrimps, 2 deep-fried wonton.</p>
                         </div>
                     </div>
+                </section>
 
-                    <div class="addon-box">
-                        <div class="addon-title">Add-Ons</div>
-                        <div class="addon-row"><span>Extra Meat</span><span class="addon-price">3.50</span></div>
-                        <div class="addon-row"><span>Extra Noodle</span><span class="addon-price">2.00</span></div>
-                        <div class="addon-row"><span>Extra Broth</span><span class="addon-price">2.00</span></div>
-                        <div class="addon-row"><span>Meatball (3)</span><span class="addon-price">2.50</span></div>
-                        <div class="addon-row"><span>Tendon</span><span class="addon-price">2.50</span></div>
-                        <div class="addon-row"><span>Tripes</span><span class="addon-price">2.50</span></div>
+
+                <section id="dimsum" class="menu-section">
+                    <h2 class="section-header">Dim Sum <span>Steamed &amp; Fried</span></h2>
+                    <div class="item-list">
+                        <div class="item"><div class="item-top"><span class="item-num">14.</span><span class="item-name">Chicken Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">15.</span><span class="item-name">Vegetables Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">16.</span><span class="item-name">Charsiu Pork Steamed Bao (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">17.</span><span class="item-name">Shrimp &amp; Bamboo Ha Gao (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">18.</span><span class="item-name">Shanghai Pork Dumplings (6)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">19.</span><span class="item-name">Pork / Chicken Siu Mai (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
+                        <div class="item"><div class="item-top"><span class="item-num">20.</span><span class="item-name">Steamed Dim Sum Platter (5)</span><span class="item-dots"></span><span class="item-price">12.25</span></div></div>
+                    </div>
+                </section>
+
+
+                <section id="pho" class="menu-section">
+                    <h2 class="section-header">Phở Favorites <span>Our Bowls</span></h2>
+                    <p class="section-intro">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55.</p>
+                    <div class="item-list">
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">21.</span><span class="item-name">Dried Hand Mixed Pho</span><span class="item-dots"></span><span class="item-price">18.45</span></div>
+                            <p class="item-desc">Wok fried filet mignon, meatball, and brisket, rice noodle mixed with homemade sauce.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">22.</span><span class="item-name">Rib Bone Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
+                            <p class="item-desc">Filet mignon and beef back rib in beef broth cooked overnight.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">23.</span><span class="item-name">House Combination Pho</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
+                            <p class="item-desc">Filet mignon, beef meatball, brisket, tendon, and tripe with thin rice noodles.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">24.</span><span class="item-name">Rare Flap Meat Pho</span><span class="item-dots"></span><span class="item-price">17.79</span></div>
+                            <p class="item-desc">Filet mignon with thin noodle in house beef broth cooked for 24+ hours.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">25.</span><span class="item-name">Free Range Chicken Pho</span><span class="item-dots"></span><span class="item-price">17.99</span></div>
+                            <p class="item-desc">Homemade chicken broth, tender chicken with bone, served with thin rice noodles.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">26.</span><span class="item-name">Chicken Pho</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
+                            <p class="item-desc">Shredded white meat chicken and thin rice noodles in savory chicken broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">27.</span><span class="item-name">Shrimp Pho</span><span class="item-dots"></span><span class="item-price">17.79</span></div>
+                            <p class="item-desc">Shrimp and rice noodles in veggies broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">28.</span><span class="item-name">Seafood Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
+                            <p class="item-desc">Squid, shrimp, fishball w/ roe and rice noodles in veggies broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">29.</span><span class="item-name">Vegetarian Pho</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
+                            <p class="item-desc">Chayote, mushroom, carrot, daikon, fried tofu, and thin rice noodles in veggies broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">30.</span><span class="item-name">No Meat Pho</span><span class="item-dots"></span><span class="item-price">12.49</span></div>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">31.</span><span class="item-name">Sour Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
+                            <p class="item-desc">Rice noodle, shrimp, fish ball, squid with our sour and spicy broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">32.</span><span class="item-name">Hủ Tiếu</span><span class="item-dots"></span><span class="item-price">17.69</span></div>
+                            <p class="item-desc">Rice noodle, chicken breast, shrimp, &amp; beef meatball served with our house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">33.</span><span class="item-name">Hủ Tiếu Mì</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
+                            <p class="item-desc">Egg noodle mixed w/ rice noodle, chicken breast, shrimp, &amp; beef meatball served with our house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">34.</span><span class="item-name">Wonton and Egg Noodle</span><span class="item-dots"></span><span class="item-price">18.00</span></div>
+                            <p class="item-desc">Egg noodle, wonton, shrimp, carrot, bokchoy served with our house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">35.</span><span class="item-name">Wonton Soup</span><span class="item-dots"></span><span class="item-price">18.00</span></div>
+                            <p class="item-desc">Ground chicken wonton, shrimps, bokchoy, carrot, served w/ homemade broth. Add egg noodles for $2.50.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">36.</span><span class="item-name">Vietnamese Spicy Noodle Soup</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
+                            <p class="item-desc">Rice vermicelli in spicy soup, beef, tendon, Vietnamese pork paste, and meatball. Broth has shrimp paste.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -479,17 +612,27 @@
                         <div class="diy-category">
                             <h4>I. Choose Noodle Type</h4>
                             <ul class="diy-options">
-                                <li><span class="diy-name">Thin Noodles</span><span class="diy-up">17.85</span></li>
-                                <li><span class="diy-name">Fresh Noodles</span><span class="diy-up">18.80</span></li>
+                                <li><span class="diy-name">Option 1: 2 Proteins &amp; Thin Noodles</span></li>
+                                <li><span class="diy-name">Option 2: 2 Proteins &amp; Fresh Noodles</span></li>
                             </ul>
+                            <div class="diy-price-row"><span>Thin</span><span>$17.85</span></div>
+                            <div class="diy-price-row"><span>Fresh</span><span>$18.80</span></div>
                         </div>
                         <div class="diy-category">
                             <h4>II. Choose Your Protein</h4>
                             <p class="diy-subhead">Seafood</p>
                             <ul class="diy-options">
-                                <li><span class="diy-name">Shrimp</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">Fishball w/ Roe</span><span class="diy-up">+0.50</span></li>
+                                <li><span class="diy-name">Shrimp</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">Fishball w/ Roe</span><span class="diy-up">+45¢</span></li>
                                 <li><span class="diy-name">Squid</span><span class="diy-up">+1.50</span></li>
+                            </ul>
+                            <p class="diy-subhead">Beef</p>
+                            <ul class="diy-options">
+                                <li><span class="diy-name">Filet Mignon (Halal)</span></li>
+                                <li><span class="diy-name">Brisket</span></li>
+                                <li><span class="diy-name">Tendon</span></li>
+                                <li><span class="diy-name">Tripe</span></li>
+                                <li><span class="diy-name">Beef Meatball</span></li>
                             </ul>
                             <p class="diy-subhead">Poultry</p>
                             <ul class="diy-options"><li><span class="diy-name">Chicken Breast</span></li></ul>
@@ -499,15 +642,15 @@
                         <div class="diy-category">
                             <h4>III. Choose Your Veggies</h4>
                             <ul class="diy-options">
-                                <li><span class="diy-name">Green Onion</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">White Onion</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">Cabbage</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">Carrot</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">Chayote</span><span class="diy-up">+0.45</span></li>
-                                <li><span class="diy-name">Broccoli</span><span class="diy-up">+0.75</span></li>
-                                <li><span class="diy-name">Mushroom</span><span class="diy-up">+0.75</span></li>
-                                <li><span class="diy-name">Daikon</span><span class="diy-up">+0.75</span></li>
-                                <li><span class="diy-name">Bok Choy</span><span class="diy-up">+0.85</span></li>
+                                <li><span class="diy-name">Green Onion</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">White Onion</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">Cabbage</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">Carrot</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">Chayote</span><span class="diy-up">+45¢</span></li>
+                                <li><span class="diy-name">Broccoli</span><span class="diy-up">+75¢</span></li>
+                                <li><span class="diy-name">Mushroom</span><span class="diy-up">+75¢</span></li>
+                                <li><span class="diy-name">Daikon</span><span class="diy-up">+75¢</span></li>
+                                <li><span class="diy-name">Bokchoy</span><span class="diy-up">+85¢</span></li>
                             </ul>
                         </div>
                         <div class="diy-category">
@@ -521,39 +664,18 @@
                     </div>
                 </section>
 
-                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=1000&auto=format&fit=crop" alt="Appetizers" class="inline-img">
 
-
-                <section id="appetizers" class="menu-section">
-                    <h2 class="section-header">Appetizers <span>To Share</span></h2>
-                    <div class="app-grid">
-                        <div class="item"><div class="item-top"><span class="item-num">1.</span><span class="item-name">Saigon Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">2.</span><span class="item-name">Wings Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">3.</span><span class="item-name">Egg Rolls (4)</span><span class="item-dots"></span><span class="item-price">11.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">4.</span><span class="item-name">Spring Rolls (2)</span><span class="item-dots"></span><span class="item-price">10.99</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">5.</span><span class="item-name">Fried Tofu</span><span class="item-dots"></span><span class="item-price">10.19</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">6.</span><span class="item-name">Avocado Cheese Rangoon (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">7.</span><span class="item-name">Cajun French Fries</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">8.</span><span class="item-name">Pot Stickers (5)</span><span class="item-dots"></span><span class="item-price">17.59</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">9.</span><span class="item-name">Crispy Mushroom</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">10.</span><span class="item-name">Deep Fried Wonton (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">11.</span><span class="item-name">V-Pao Pao</span><span class="item-dots"></span><span class="item-price">12.99</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">12.</span><span class="item-name">V-Tastic Sampler</span><span class="item-dots"></span><span class="item-price">17.59</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">13.</span><span class="item-name">Calamari</span><span class="item-dots"></span><span class="item-price">13.49</span></div></div>
-                    </div>
-                </section>
-
-
-                <section id="dimsum" class="menu-section">
-                    <h2 class="section-header">Dim Sum <span>Steamed &amp; Fried</span></h2>
+                <section id="banhmi" class="menu-section">
+                    <h2 class="section-header">Banh Mi <span>Sandwiches</span></h2>
                     <div class="item-list">
-                        <div class="item"><div class="item-top"><span class="item-num">14.</span><span class="item-name">Chicken Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">15.</span><span class="item-name">Vegetables Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">16.</span><span class="item-name">Pork Steamed Bao (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">17.</span><span class="item-name">Shrimp &amp; Bamboo Ha Gao (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">18.</span><span class="item-name">Shanghai Pork Dumplings (6)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">19.</span><span class="item-name">Pork / Chicken Siu Mai (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">20.</span><span class="item-name">Steamed Dim Sum Platter (5)</span><span class="item-dots"></span><span class="item-price">12.25</span></div></div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">37.</span><span class="item-name">Vietnamese Grilled Sandwich</span><span class="item-dots"></span><span class="item-price">12.19</span></div>
+                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/tofu), butter, pickled vegetables. Add a fried egg +$2.50.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">38.</span><span class="item-name">Five Spices Beef Sandwich</span><span class="item-dots"></span><span class="item-price">12.99</span></div>
+                            <p class="item-desc">Grilled five spices beef, butter, pickled vegetables, homemade sauce. Add a fried egg +$2.50.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -568,14 +690,38 @@
                 <section id="rice" class="menu-section">
                     <h2 class="section-header">Rice Plates <span>Wok &amp; Grill</span></h2>
                     <div class="item-list">
-                        <div class="item"><div class="item-top"><span class="item-num">39.</span><span class="item-name">Supreme Shaken Beef Fried Rice</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">40.</span><span class="item-name">Vietnamese Shaken Beef</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">41.</span><span class="item-name">Korean BBQ Short Ribs</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">42.</span><span class="item-name">Orange Chicken</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">43.</span><span class="item-name">Grilled Meat &amp; Egg Rice</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">44.</span><span class="item-name">House Fried Rice</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">45.</span><span class="item-name">Crispy Chicken Fried Rice</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">46.</span><span class="item-name">Green Glow Rice</span></div></div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">39.</span><span class="item-name">Supreme Shaken Beef Fried Rice</span><span class="item-dots"></span><span class="item-price">22.09</span></div>
+                            <p class="item-desc">A delectable blend of tender filet mignon and flavorful fried rice, creating a supreme taste sensation.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">40.</span><span class="item-name">Vietnamese Shaken Beef</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
+                            <p class="item-desc">Tender filet mignon stir-fried and served with steamed white rice.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">41.</span><span class="item-name">Korean BBQ Short Ribs</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
+                            <p class="item-desc">Grilled short ribs marinated in house special sauce, white rice, &amp; vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">42.</span><span class="item-name">Orange Chicken</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
+                            <p class="item-desc">White meat chicken, fresh house made orange sauce, served over white rice and vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">43.</span><span class="item-name">Grilled Meat &amp; Egg Rice</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
+                            <p class="item-desc">Choice of (beef/pork/chicken), golden fried egg, steamed white rice, mixed vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">44.</span><span class="item-name">House Fried Rice</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
+                            <p class="item-desc">Stir-fried rice, scrambled egg with choice of meat (beef/pork/chicken/shrimp), mixed vegetables. Add a fried egg +$2.50.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">45.</span><span class="item-name">Crispy Chicken Fried Rice</span><span class="item-dots"></span><span class="item-price">21.00</span></div>
+                            <p class="item-desc">Crispy fried chicken over flavorful fried rice, paired with pickled vegetables and a savory dipping sauce. Add a fried egg +$2.50.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">46.</span><span class="item-name">Green Glow Rice</span><span class="item-dots"></span><span class="item-price">17.19</span></div>
+                            <p class="item-desc">Carrot, mushroom, bokchoy, cabbage, broccoli, white onion, green onion, fried tofu stir-fried with our special sauce.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -583,10 +729,22 @@
                 <section id="noodles" class="menu-section">
                     <h2 class="section-header">Noodle Plates <span>Stir-Fry</span></h2>
                     <div class="item-list">
-                        <div class="item"><div class="item-top"><span class="item-num">47.</span><span class="item-name">Rice Noodles "Vermicelli"</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">48.</span><span class="item-name">Garlic Noodles</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">49.</span><span class="item-name">Shake-Shake Garlic Noodles</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">50.</span><span class="item-name">Beef Stir-Fry Noodles</span></div></div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">47.</span><span class="item-name">Rice Noodles "Vermicelli"</span><span class="item-dots"></span><span class="item-price">17.39</span></div>
+                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/shrimp, five spices grilled beef), vermicelli noodles, fresh herbs, veggies, egg roll, fish sauce.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">48.</span><span class="item-name">Garlic Noodles</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
+                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/shrimp/five spices beef) served over stir fried Shanghai noodles. Add a fried egg +$2.50.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">49.</span><span class="item-name">Shake-Shake Garlic Noodles</span><span class="item-dots"></span><span class="item-price">21.09</span></div>
+                            <p class="item-desc">Tender filet mignon, house garlic butter sauce, served over stir fried Shanghai noodles and white onion, lettuce, tomatoes, cucumber.</p>
+                        </div>
+                        <div class="item">
+                            <div class="item-top"><span class="item-num">50.</span><span class="item-name">Beef Stir-Fry Noodles</span><span class="item-dots"></span><span class="item-price">17.65</span></div>
+                            <p class="item-desc">Instant noodles stir-fried with marinated beef, cabbage, white onion, and topped with a fried egg.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -597,7 +755,6 @@
                         <li><span class="bev-name">Blueberry</span></li>
                         <li><span class="bev-name">Avocado</span></li>
                         <li><span class="bev-name">Strawnana</span></li>
-                        <li><span class="bev-name">Taro <em style="font-size:0.8em; color:var(--brand-orange);">— NEW</em></span></li>
                         <li><span class="bev-name">Mango</span></li>
                         <li><span class="bev-name">Coco</span></li>
                         <li><span class="bev-name">Strawberry</span></li>
@@ -609,17 +766,16 @@
                     <h2 class="section-header">Boba Tea <span>$7.45 each</span></h2>
                     <ul class="bev-list two-col">
                         <li><span class="bev-name star">V-Milk Tea</span></li>
-                        <li><span class="bev-name">Jasmine Milk Tea</span></li>
-                        <li><span class="bev-name">Mashed Cheese Milk Tea</span></li>
+                        <li><span class="bev-name star">Jasmine Black Milk Tea</span></li>
+                        <li><span class="bev-name">Cheese Milk Tea</span></li>
                         <li><span class="bev-name">Thai Boba Ice Tea</span></li>
                         <li><span class="bev-name">Peach Tea</span></li>
-                        <li><span class="bev-name">Lychee Tea</span></li>
+                        <li><span class="bev-name star">Lychee Tea</span></li>
                         <li><span class="bev-name">Green Apple Tea</span></li>
                         <li><span class="bev-name">Honeydew Tea</span></li>
                         <li><span class="bev-name">Strawberry Tea</span></li>
                         <li><span class="bev-name">Pineapple Tea</span></li>
-                        <li><span class="bev-name">Mango Tea</span></li>
-                        <li><span class="bev-name">Guava Glow</span></li>
+                        <li><span class="bev-name star">Guava Glow</span></li>
                         <li><span class="bev-name">Peachy Mango Pop</span></li>
                         <li><span class="bev-name">Strawberry Macchiato</span></li>
                         <li><span class="bev-name">Mango Macchiato</span></li>
@@ -630,12 +786,14 @@
                     <div class="topping-box">
                         <div class="topping-title">Toppings</div>
                         <ul>
+                            <li><span>Cheese Pudding</span><span class="topping-price">+1.00</span></li>
+                            <li><span>Crystal Boba</span><span class="topping-price">+0.85</span></li>
                             <li><span>Boba</span><span class="topping-price">+0.50</span></li>
-                            <li><span>Crystal Boba</span><span class="topping-price">+1.00</span></li>
                             <li><span>Aloe Vera</span><span class="topping-price">+1.00</span></li>
                             <li><span>Mango Jelly</span><span class="topping-price">+0.75</span></li>
                             <li><span>Rainbow Jelly</span><span class="topping-price">+0.75</span></li>
                             <li><span>Lychee Jelly</span><span class="topping-price">+0.75</span></li>
+                            <li><span>Grass Jelly</span><span class="topping-price">+0.90</span></li>
                             <li><span>Sea Salted Foam</span><span class="topping-price">+1.00</span></li>
                         </ul>
                     </div>
@@ -650,6 +808,7 @@
                             <h3>Fresh Drinks</h3>
                             <ul class="bev-list">
                                 <li><span class="bev-name star">Squeezed Orange Juice</span><span class="bev-price">7.45</span></li>
+                                <li><span class="bev-name">Fresh Watermelon Juice</span><span class="bev-price">7.89</span></li>
                                 <li><span class="bev-name star">Fresh Coconut Juice</span><span class="bev-price">7.45</span></li>
                                 <li><span class="bev-name star">Snowy Lemonade</span><span class="bev-price">8.00</span></li>
                                 <li><span class="bev-name">Lemonade</span><span class="bev-price">4.99</span></li>
@@ -661,7 +820,7 @@
                             <h3>Coffee</h3>
                             <ul class="bev-list">
                                 <li><span class="bev-name">Vietnamese Iced Coffee</span><span class="bev-price">6.48</span></li>
-                                <li><span class="bev-name">Vietnamese White Iced Coffee</span><span class="bev-price">7.29</span></li>
+                                <li><span class="bev-name star">Vietnamese White Iced Coffee</span><span class="bev-price">7.29</span></li>
                                 <li><span class="bev-name">Vietnamese Black Coffee</span><span class="bev-price">6.48</span></li>
                                 <li><span class="bev-name">Vietnamese Drip Coffee (Hot)</span><span class="bev-price">6.48</span></li>
                             </ul>
@@ -671,8 +830,95 @@
                             <h3>Soft Drinks</h3>
                             <ul class="bev-list">
                                 <li><span class="bev-name">Coke / Diet Coke / Pepsi / Diet Pepsi / Sprite / Dr Pepper / Root Beer</span><span class="bev-price">3.49</span></li>
+                                <li><span class="bev-name">Thai Redbull</span><span class="bev-price">4.59</span></li>
                                 <li><span class="bev-name">Tea (Cup, Iced or Hot)</span><span class="bev-price">2.49</span></li>
                                 <li><span class="bev-name">Tea Pot</span><span class="bev-price">8.79</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section id="bar" class="booze-section menu-section">
+                    <h2 class="section-header">Fishbowls &amp; Cocktails <span>21+ · Bar</span></h2>
+
+                    <div class="booze-grid">
+                        <div class="booze-col">
+                            <h3>Fishbowls <span class="booze-base">$39</span></h3>
+                            <ul class="booze-list">
+                                <li>
+                                    <span class="booze-name">Miss Independent</span>
+                                    <p class="booze-desc">Strawberry soju, blue curacao, watermelon grape wine, electrolyte drink, lemonade, premium soju, topped with cotton candy.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Knock Out!</span>
+                                    <p class="booze-desc">Citron soju, cranberry, lime, han vodka soju, pomegranate.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Hulk Smash</span>
+                                    <p class="booze-desc">Apple soju, kiwi punch, kiwi, han premium saki, pop-rock rim.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Grape Galaxy</span>
+                                    <p class="booze-desc">Soju original, grape, watermelon wine, blue curacao, sprite, popsicle, glow cubes.</p>
+                                </li>
+                            </ul>
+
+                            <h3>Bottled Soju <span class="booze-base">$9.98</span></h3>
+                            <ul class="booze-flat">
+                                <li>Original — 16.50% ABV</li>
+                                <li>Peach</li>
+                                <li>Lychee</li>
+                                <li>Yogurt</li>
+                                <li>Strawberry</li>
+                                <li>Apple</li>
+                            </ul>
+                        </div>
+
+                        <div class="booze-col">
+                            <h3>Cocktails <span class="booze-base">$12.49</span></h3>
+                            <ul class="booze-list">
+                                <li>
+                                    <span class="booze-name">"SunnyD"</span>
+                                    <p class="booze-desc">Teq Han, apple mango soju, pineapple juice, ginger beer.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Passion Fruit Mojito</span>
+                                    <p class="booze-desc">Mint, lime, citrus Han, passion fruit, club soda.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Saigon Espresso Martini</span>
+                                    <p class="booze-desc">Han Original, coffee wine, espresso, sweet &amp; condensed milk.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Hot Doctor</span>
+                                    <p class="booze-desc">Cinnamon whiskey Han, Dr. Pepper.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Teq Sunrise</span>
+                                    <p class="booze-desc">Teq Han, orange juice, grenadine.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Moscow Mule</span>
+                                    <p class="booze-desc">Vodka Han, ginger beer, lime.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Frozen Mango Margarita</span>
+                                    <p class="booze-desc">Teq Han, mango wine, mango, citrus.</p>
+                                </li>
+                                <li>
+                                    <span class="booze-name">Blue Hawaiian Frozen</span>
+                                    <p class="booze-desc">Citrus Han, blue curaçao, pineapple, coconut cream, cherry.</p>
+                                </li>
+                            </ul>
+
+                            <h3>Beer <span class="booze-base">$7.49</span></h3>
+                            <ul class="booze-flat">
+                                <li>Asahi — 5.2% ABV</li>
+                                <li>Sapporo — 4.9% ABV</li>
+                                <li>Lagunitas IPA — 6.2% ABV</li>
+                                <li>Heineken — 5% ABV</li>
+                                <li>Corona Extra — 4.6% ABV</li>
                             </ul>
                         </div>
                     </div>
@@ -690,7 +936,7 @@
         <div class="foot-row">
             <span>930 W Hamilton Ave, Ste 110, Campbell, CA 95008</span>
         </div>
-        <p class="foot-note">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55.</p>
+        <p class="foot-note">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55. &nbsp;·&nbsp; Paying with credit card adds a 4% surcharge. &nbsp;·&nbsp; 18% gratuity is added to parties of 5 or more.</p>
     </footer>
 
     <script>
