@@ -3,10 +3,22 @@ import site from '../content/site.json'
 
 const STORAGE_KEY = 'vpho-announcement-dismissed'
 
+// Keep an item if it has no expiry, or its expiry date (end of day) is today or later.
+function isLive(item) {
+  if (!item?.headline) return false
+  if (!item.expires) return true
+  const end = new Date(`${item.expires}T23:59:59`)
+  if (Number.isNaN(end.getTime())) return true
+  return Date.now() <= end.getTime()
+}
+
 export default function AnnouncementBar() {
   const { announcement } = site
+  const items = (announcement?.items || []).filter(isLive)
+
   const [visible, setVisible] = useState(false)
   const [showTerms, setShowTerms] = useState(false)
+  const [index, setIndex] = useState(0)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -14,7 +26,19 @@ export default function AnnouncementBar() {
     if (!dismissed) setVisible(true)
   }, [])
 
-  if (!visible || !announcement?.enabled) return null
+  // Auto-rotate when more than one live message and terms aren't expanded.
+  useEffect(() => {
+    if (!visible || showTerms || items.length < 2) return
+    const ms = (announcement?.rotateSeconds || 6) * 1000
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % items.length)
+    }, ms)
+    return () => clearInterval(id)
+  }, [visible, showTerms, items.length, announcement?.rotateSeconds])
+
+  if (!visible || !announcement?.enabled || items.length === 0) return null
+
+  const current = items[index % items.length]
 
   const dismiss = () => {
     if (typeof window !== 'undefined') {
@@ -27,8 +51,8 @@ export default function AnnouncementBar() {
     <div className="w-full bg-brand-gold text-brand-dark relative">
       <div className="max-w-7xl mx-auto px-12 py-2.5 text-center">
         <p className="text-sm md:text-base font-semibold leading-snug">
-          {announcement.headline}
-          {announcement.terms && (
+          {current.headline}
+          {current.terms && (
             <button
               type="button"
               onClick={() => setShowTerms((s) => !s)}
@@ -38,10 +62,30 @@ export default function AnnouncementBar() {
             </button>
           )}
         </p>
-        {showTerms && announcement.terms && (
+        {showTerms && current.terms && (
           <p className="mt-1.5 text-xs md:text-sm opacity-80 leading-relaxed">
-            {announcement.terms}
+            {current.terms}
           </p>
+        )}
+        {items.length > 1 && (
+          <div className="mt-1.5 flex justify-center gap-1.5" aria-hidden="true">
+            {items.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => {
+                  setShowTerms(false)
+                  setIndex(i)
+                }}
+                aria-label={`Show announcement ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === index % items.length
+                    ? 'w-4 bg-brand-dark/70'
+                    : 'w-1.5 bg-brand-dark/30 hover:bg-brand-dark/50'
+                }`}
+              />
+            ))}
+          </div>
         )}
       </div>
       <button

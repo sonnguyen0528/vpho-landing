@@ -15,8 +15,19 @@
   },
   "announcement": {
     "enabled": true,
-    "headline": "5% OFF Your Entire Bill — Show this announcement to your server to redeem.",
-    "terms": "Show this announcement (or our @vpho_restaurant post) to your server · 5% off your entire bill · One redemption per table (not per guest) · Cannot be combined with other offers or discounts · Limited time: valid now through Monday, July 20, 2026"
+    "rotateSeconds": 6,
+    "items": [
+      {
+        "headline": "Your Birthday, Our Treat — 5% OFF your entire order. Show ID on your birthday at checkout.",
+        "terms": "Valid on your birthday only with photo ID · Excludes alcohol · Dine-in & takeout · One per guest per year · Cannot combine with other offers",
+        "expires": ""
+      },
+      {
+        "headline": "5% OFF Your Entire Bill — Show this announcement to your server to redeem.",
+        "terms": "Show this announcement (or our @vpho_restaurant post) to your server · 5% off your entire bill · One redemption per table (not per guest) · Cannot be combined with other offers or discounts · Limited time: valid now through Monday, July 20, 2026",
+        "expires": "2026-07-20"
+      }
+    ]
   },
   "nav": [
     {

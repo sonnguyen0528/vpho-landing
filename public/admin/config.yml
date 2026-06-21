@@ -204,3 +204,35 @@ collections:
               - label: Background image
                 name: image
                 widget: image
+
+          - label: Announcement Bar
+            name: announcement
+            widget: object
+            collapsed: false
+            fields:
+              - label: Show the bar
+                name: enabled
+                widget: boolean
+                default: true
+              - label: Seconds between rotating messages
+                name: rotateSeconds
+                widget: number
+                value_type: int
+                default: 6
+              - label: Messages (rotates through all live ones)
+                name: items
+                widget: list
+                summary: '{{fields.headline}}'
+                fields:
+                  - label: Headline
+                    name: headline
+                    widget: string
+                  - label: Details / terms (shown under "See details")
+                    name: terms
+                    widget: text
+                    required: false
+                  - label: Expires on (YYYY-MM-DD, leave blank for evergreen)
+                    name: expires
+                    widget: string
+                    required: false
+                    hint: 'After this date the message auto-hides. Blank = always show.'
