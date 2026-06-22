@@ -38,9 +38,9 @@ export default function PrivateEventsSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="grid grid-cols-2 gap-4 h-[500px]">
+          <div className="flex flex-col gap-4">
             {hero && (
-              <div className="row-span-2 overflow-hidden shadow-xl">
+              <div className="aspect-[3/2] overflow-hidden shadow-xl">
                 <img
                   src={hero.src}
                   alt={hero.alt}
@@ -48,15 +48,22 @@ export default function PrivateEventsSection() {
                 />
               </div>
             )}
-            {rest.map((photo) => (
-              <div key={photo.src} className="overflow-hidden shadow-xl">
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
+            {rest.length > 0 && (
+              <div className="grid grid-cols-2 gap-4">
+                {rest.map((photo) => (
+                  <div
+                    key={photo.src}
+                    className="aspect-[4/3] overflow-hidden shadow-xl"
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
 
           <div>
