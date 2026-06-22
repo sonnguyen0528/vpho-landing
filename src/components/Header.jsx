@@ -56,7 +56,7 @@ export default function Header() {
             className="text-2xl sm:text-3xl lg:text-5xl font-black text-white tracking-[0.1em] sm:tracking-[0.15em] uppercase text-center leading-tight max-w-[90vw]"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
           >
-            Very <span className="text-brand-gold">Phonominal</span>
+            V<span className="text-brand-gold">PHO</span>
           </a>
         </div>
 

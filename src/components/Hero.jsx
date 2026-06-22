@@ -14,6 +14,9 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 w-full px-4 text-center mt-20">
+        <p className="text-white font-black uppercase text-base md:text-lg lg:text-xl tracking-[0.25em] sm:tracking-[0.3em] mb-3 drop-shadow-lg">
+          Very <span className="text-brand-gold">Phonominal</span>
+        </p>
         <h2 className="text-brand-gold font-serif italic text-2xl md:text-3xl lg:text-4xl mb-4">
           {hero.tagline}
         </h2>
