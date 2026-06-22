@@ -187,6 +187,38 @@ collections:
                       - heart
                     default: leaf
 
+          - label: Featured Dishes Section
+            name: featuredDishes
+            widget: object
+            collapsed: false
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Heading
+                name: heading
+                widget: string
+              - label: Menu link label
+                name: menuLinkLabel
+                widget: string
+              - label: Menu link href
+                name: menuLinkHref
+                widget: string
+              - label: Dishes
+                name: items
+                widget: list
+                summary: '{{fields.dishName}}'
+                fields:
+                  - label: Dish name
+                    name: dishName
+                    widget: string
+                  - label: Photo
+                    name: image
+                    widget: image
+                  - label: Image alt text
+                    name: alt
+                    widget: string
+
           - label: CTA Section
             name: cta
             widget: object

@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import DeliverySection from './components/DeliverySection'
 import WelcomeSection from './components/WelcomeSection'
+import FeaturedDishesSection from './components/FeaturedDishesSection'
 import SocialProofSection from './components/SocialProofSection'
 import BannerSection from './components/BannerSection'
 import OfferingsSection from './components/OfferingsSection'
@@ -20,6 +21,7 @@ export default function App() {
       <Hero />
       <DeliverySection />
       <WelcomeSection />
+      <FeaturedDishesSection />
       <SocialProofSection />
       <BannerSection />
       <OfferingsSection />

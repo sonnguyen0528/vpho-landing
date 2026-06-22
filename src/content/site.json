@@ -157,6 +157,54 @@
       }
     ]
   },
+  "featuredDishes": {
+    "eyebrow": "From Our Kitchen",
+    "heading": "Our Dishes",
+    "menuLinkLabel": "See full menu",
+    "menuLinkHref": "/menu/",
+    "items": [
+      {
+        "dishName": "Rib Bone Pho",
+        "image": "/uploads/dish-rib-bone-pho.jpg",
+        "alt": "Rib Bone Pho — fall-off-the-bone back rib with filet mignon"
+      },
+      {
+        "dishName": "House Combination Pho",
+        "image": "/uploads/dish-house-combination-pho.jpg",
+        "alt": "House Combination Pho with filet mignon, brisket, meatball, tendon and tripe"
+      },
+      {
+        "dishName": "Oxtail Pho",
+        "image": "/uploads/dish-oxtail-pho.jpg",
+        "alt": "Oxtail Pho in rich slow-simmered beef broth"
+      },
+      {
+        "dishName": "Surf & Turf Pho",
+        "image": "/uploads/dish-surf-and-turf-pho.jpg",
+        "alt": "Special Surf and Turf Pho with seafood and beef"
+      },
+      {
+        "dishName": "Vietnamese Shaken Beef",
+        "image": "/uploads/dish-shaken-beef-rice-plate.jpg",
+        "alt": "Vietnamese Shaken Beef rice plate — Bò Lúc Lắc"
+      },
+      {
+        "dishName": "Bánh Mì",
+        "image": "/uploads/dish-banh-mi.jpg",
+        "alt": "Grilled Bánh Mì Vietnamese sandwich"
+      },
+      {
+        "dishName": "Egg Rolls",
+        "image": "/uploads/dish-egg-roll.jpg",
+        "alt": "Crispy Vietnamese egg rolls"
+      },
+      {
+        "dishName": "Spicy Noodle Soup",
+        "image": "/uploads/dish-spicy-noodle-soup.jpg",
+        "alt": "Spicy noodle soup — Bún Bò Huế style"
+      }
+    ]
+  },
   "social": {
     "facebook": "https://www.facebook.com/vphorestaurant/",
     "instagram": "https://www.instagram.com/vpho_restaurant/",
