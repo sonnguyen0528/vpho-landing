@@ -277,7 +277,23 @@
             margin-bottom: var(--space-sm);
         }
         .catering-section p { font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-sm); opacity: 0.9; }
-        .catering-section .catering-cta { font-style: italic; opacity: 0.8; font-size: 0.95rem; }
+        .catering-section .catering-cta { font-style: italic; opacity: 0.8; font-size: 0.95rem; margin-top: var(--space-sm); }
+        .ezcater-btn {
+            display: inline-block;
+            background-color: #E5A93C;
+            color: #1A1A1A;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            padding: 0.85rem 2.25rem;
+            border-radius: 2px;
+            margin: var(--space-sm) 0;
+            transition: background-color 0.25s ease, transform 0.15s ease;
+        }
+        .ezcater-btn:hover, .ezcater-btn:focus { background-color: #F2BC55; transform: translateY(-1px); }
+        @media (max-width: 600px) { .ezcater-btn { display: block; width: 100%; padding: 1rem; font-size: 1.05rem; } }
 
         .booze-section {
             background-color: var(--text-dark);
@@ -683,7 +699,8 @@
                 <section id="catering" class="catering-section menu-section">
                     <h2>Party Trays Available</h2>
                     <p>Perfect for any event or gathering. Made fresh with quality ingredients.</p>
-                    <p class="catering-cta">Contact us at <a href="mailto:hello@v-pho.com" style="color: var(--bg-cream); text-decoration: underline;">hello@v-pho.com</a> for more information and anything you need.</p>
+                    <a href="https://www.ezcater.com/catering/pvt/vpho-3?aff" target="_blank" rel="noopener noreferrer" class="ezcater-btn">Order Catering Online</a>
+                    <p class="catering-cta">Or contact us at <a href="mailto:hello@v-pho.com" style="color: var(--bg-cream); text-decoration: underline;">hello@v-pho.com</a> for custom orders and anything you need.</p>
                 </section>
 
 

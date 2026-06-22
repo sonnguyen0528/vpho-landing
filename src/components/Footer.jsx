@@ -5,6 +5,11 @@ const quickLinks = [
   { label: 'Home', href: '#' },
   { label: 'Hungry? Call us!', href: 'tel:+14083782234' },
   { label: 'Party Trays Now Available', href: '/menu/#catering' },
+  {
+    label: 'Order Catering Online',
+    href: 'https://www.ezcater.com/catering/pvt/vpho-3?aff',
+    external: true,
+  },
 ]
 
 const LocationIcon = (props) => (
@@ -98,6 +103,9 @@ export default function Footer() {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  {...(link.external
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
                   className="hover:text-brand-gold transition-colors"
                 >
                   {link.label}
