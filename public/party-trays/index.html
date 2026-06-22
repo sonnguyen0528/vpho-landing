@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPhonominal | Catering — Party Trays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #F2EFE8;
+            --brand-orange: #C6531A;
+            --brand-pink: #E5C4BE;
+            --brand-green: #1F4D3A;
+            --text-dark: #2A1610;
+            --text-muted: #6B554A;
+            --line-color: rgba(42, 22, 16, 0.15);
+
+            --font-display: 'Cormorant Garamond', serif;
+            --font-ui: 'DM Sans', sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: var(--font-ui);
+            line-height: 1.4;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        ::selection { background: var(--brand-orange); color: var(--bg-cream); }
+
+        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1; color: var(--brand-orange); }
+
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: var(--space-xl) auto var(--space-lg);
+            width: fit-content;
+            color: var(--brand-orange);
+        }
+        .logo-v { font-size: 14vw; line-height: 0.8; margin-right: -2vw; position: relative; z-index: 2; }
+        .logo-pho { display: flex; flex-direction: column; font-size: 6vw; line-height: 0.75; letter-spacing: -0.05em; position: relative; z-index: 1; }
+        .logo-pill {
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid var(--brand-orange);
+            border-radius: 50px;
+            padding: 4px 10px;
+            font-family: var(--font-ui);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: var(--bg-cream);
+            z-index: 3;
+            white-space: nowrap;
+        }
+        .brand-tagline {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: var(--space-md);
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
+
+        .catering-hero {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--line-color);
+        }
+        .catering-hero h1 {
+            font-size: 5rem;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-sm);
+        }
+        .catering-hero .intro {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto var(--space-md);
+        }
+        .catering-hero .terms {
+            font-size: 0.9rem;
+            color: var(--brand-green);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: var(--space-xs);
+        }
+        .catering-hero .disclaimer {
+            font-size: 0.8rem;
+            font-style: italic;
+            color: var(--text-muted);
+            opacity: 0.9;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: var(--space-md);
+            transition: color 0.3s ease;
+        }
+        .back-link:hover { color: var(--brand-orange); }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: var(--space-xl);
+            padding-bottom: var(--space-xl);
+            position: relative;
+        }
+
+        .nav-sidebar {
+            position: sticky;
+            top: var(--space-lg);
+            height: max-content;
+            border-right: 1px solid var(--line-color);
+            padding-right: var(--space-md);
+        }
+        .nav-list { list-style: none; }
+        .nav-item { margin-bottom: var(--space-sm); }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+            position: relative;
+            display: inline-block;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--brand-orange); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -2px; left: 0;
+            width: 0%; height: 1px; background-color: var(--brand-orange);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .menu-section { margin-bottom: var(--space-xl); scroll-margin-top: var(--space-lg); }
+        .section-header {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: var(--space-xs);
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .section-header span {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md) var(--space-lg);
+        }
+        .item { display: flex; flex-direction: column; }
+        .item-top { display: flex; align-items: baseline; margin-bottom: 4px; }
+        .item-name { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-dark); font-weight: 600; }
+        .item-dots { flex-grow: 1; border-bottom: 1px dotted var(--line-color); margin: 0 10px; position: relative; top: -6px; }
+        .item-price { font-family: var(--font-ui); font-size: 1rem; font-weight: 500; color: var(--brand-orange); white-space: nowrap; }
+        .item-serves {
+            font-family: var(--font-ui);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brand-green);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .item-desc { font-size: 0.85rem; color: var(--text-muted); max-width: 90%; }
+
+        .ezcater-bar { text-align: center; margin: var(--space-lg) 0; }
+        .ezcater-btn {
+            display: inline-block;
+            background-color: #E5A93C;
+            color: #1A1A1A;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            padding: 0.95rem 2.75rem;
+            border-radius: 2px;
+            transition: background-color 0.25s ease, transform 0.15s ease;
+        }
+        .ezcater-btn:hover, .ezcater-btn:focus { background-color: #F2BC55; transform: translateY(-1px); }
+        @media (max-width: 600px) { .ezcater-btn { display: block; width: 100%; padding: 1rem; font-size: 1.05rem; } }
+
+        .ezcater-bottom {
+            background-color: var(--brand-green);
+            color: var(--bg-cream);
+            padding: var(--space-lg);
+            border-radius: 2px;
+            margin: var(--space-md) 0 var(--space-xl);
+            text-align: center;
+        }
+        .ezcater-bottom h2 { color: var(--bg-cream); font-size: 2.5rem; margin-bottom: var(--space-sm); }
+        .ezcater-bottom p { font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-sm); opacity: 0.9; }
+        .ezcater-bottom .disclaimer { font-size: 0.8rem; font-style: italic; opacity: 0.8; max-width: 600px; margin: var(--space-sm) auto 0; }
+
+        footer {
+            border-top: 1px solid var(--line-color);
+            padding: var(--space-lg) 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: var(--space-xl);
+        }
+        footer .foot-row {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-sm);
+            flex-wrap: wrap;
+        }
+        footer .foot-note {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: var(--text-muted);
+            opacity: 0.85;
+            text-transform: none;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 1024px) {
+            .menu-grid { grid-template-columns: 200px 1fr; }
+        }
+        @media (max-width: 768px) {
+            .menu-grid { grid-template-columns: 1fr; }
+            .nav-sidebar {
+                position: static; border-right: none;
+                border-bottom: 1px solid var(--line-color);
+                padding-bottom: var(--space-sm);
+                margin-bottom: var(--space-lg);
+                overflow-x: auto; white-space: nowrap;
+            }
+            .nav-list { display: flex; gap: var(--space-sm); }
+            .item-list { grid-template-columns: 1fr; }
+            .logo-v { font-size: 24vw; }
+            .logo-pho { font-size: 10vw; }
+            .catering-hero h1 { font-size: 3.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-lockup">
+                <div class="logo-v">V</div>
+                <div class="logo-pho">
+                    <span>PH</span>
+                    <span>O</span>
+                </div>
+                <div class="logo-pill">VPhonominal</div>
+            </div>
+            <p class="brand-tagline">Vietnamese Kitchen &nbsp;·&nbsp; v-pho.com</p>
+        </header>
+
+        <a href="/menu/" class="back-link">&larr; Back to Full Menu</a>
+
+        <div class="catering-hero">
+            <h1>Catering — Party Trays</h1>
+            <p class="intro">Feeding a crowd? Every tray serves approximately 7 people. Order online through ezCater for local delivery or pickup.</p>
+            <a href="https://www.ezcater.com/catering/pvt/vpho-3?aff" target="_blank" rel="noopener noreferrer" class="ezcater-btn">Order Catering Online</a>
+            <p class="terms" style="margin-top: var(--space-md);">24-hour advance notice required &nbsp;·&nbsp; $100 minimum order &nbsp;·&nbsp; Local delivery via ezCater.</p>
+            <p class="disclaimer">Prices shown are base tray prices; final total on ezCater may include platform service and delivery fees.</p>
+        </div>
+
+        <div class="menu-grid">
+            <aside class="nav-sidebar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#appetizers" class="nav-link">Appetizers</a></li>
+                    <li class="nav-item"><a href="#dimsum" class="nav-link">Dim Sum</a></li>
+                    <li class="nav-item"><a href="#pho" class="nav-link">Phở Favorites</a></li>
+                    <li class="nav-item"><a href="#banhmi" class="nav-link">Bánh Mì</a></li>
+                    <li class="nav-item"><a href="#rice" class="nav-link">Rice Plates</a></li>
+                    <li class="nav-item"><a href="#noodles" class="nav-link">Noodle Plates</a></li>
+                    <li class="nav-item"><a href="#smoothies" class="nav-link">Smoothie 7-Packs</a></li>
+                    <li class="nav-item"><a href="#coffee" class="nav-link">Coffee 7-Packs</a></li>
+                </ul>
+            </aside>
+
+            <main>
+
+                <section id="appetizers" class="menu-section">
+                    <h2 class="section-header">Appetizers <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Saigon Wings</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried chicken wings in a sweet, buttery, mildly spicy fish-sauce glaze.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — Lemon Pepper</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in Lemon Pepper sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — Teriyaki</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in Teriyaki sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — Buffalo Garlic</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in Buffalo Garlic sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — BBQ</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in BBQ sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — Honey Hot</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in Honey Hot sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wings Wings — Korean BBQ</span><span class="item-dots"></span><span class="item-price">81.62</span></div>
+                            <p class="item-desc">Crispy fried wings tossed in Korean BBQ sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Egg Rolls</span><span class="item-dots"></span><span class="item-price">80.43</span></div>
+                            <p class="item-desc">Crispy rolls filled with pork, chicken, taro, carrot, glass noodles, and mushrooms (4 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Spring Roll</span><span class="item-dots"></span><span class="item-price">73.43</span></div>
+                            <p class="item-desc">Fresh rice-paper rolls with shrimp, pork, and mixed veggies, served with peanut sauce (2 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Fried Tofu</span><span class="item-dots"></span><span class="item-price">71.33</span></div>
+                            <p class="item-desc">Crispy deep-fried tofu with Thai basil. A simple, tasty street-food snack.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Avocado Cheese Rangoon</span><span class="item-dots"></span><span class="item-price">73.43</span></div>
+                            <p class="item-desc">Deep-fried wontons filled with avocado and cream cheese (5 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Cajun French Fries</span><span class="item-dots"></span><span class="item-price">71.33</span></div>
+                            <p class="item-desc">Skinny fries tossed with fresh herbs, served with ketchup.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Pot Stickers</span><span class="item-dots"></span><span class="item-price">71.33</span></div>
+                            <p class="item-desc">Pan-fried dumplings with ground chicken and vegetables (5 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Calamari</span><span class="item-dots"></span><span class="item-price">94.43</span></div>
+                            <p class="item-desc">Fried calamari tossed with garlic butter, jalapenos, white onion, and spicy mayo.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Crispy Mushroom</span><span class="item-dots"></span><span class="item-price">73.43</span></div>
+                            <p class="item-desc">Crispy mushrooms tossed in garlic butter sauce, jalapenos, and white onion.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Deep Fried Wonton</span><span class="item-dots"></span><span class="item-price">73.43</span></div>
+                            <p class="item-desc">Crispy wontons filled with shrimp and seasoned ground chicken (5 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Taro Shrimp Cake</span><span class="item-dots"></span><span class="item-price">54.53</span></div>
+                            <p class="item-desc">Crispy taro and shrimp cakes (2 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">V-Tastic Sampler</span><span class="item-dots"></span><span class="item-price">123.13</span></div>
+                            <p class="item-desc">1 spring roll, 1 egg roll, 2 cheese rangoon, 2 shrimp, 2 deep-fried wonton.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="dimsum" class="menu-section">
+                    <h2 class="section-header">Dim Sum <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Chicken Bun</span><span class="item-dots"></span><span class="item-price">59.43</span></div>
+                            <p class="item-desc">Steamed chicken buns (3 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Vegetables Bun</span><span class="item-dots"></span><span class="item-price">59.43</span></div>
+                            <p class="item-desc">Steamed vegetable buns (3 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Charsiu Pork Steamed Bao</span><span class="item-dots"></span><span class="item-price">59.43</span></div>
+                            <p class="item-desc">Steamed BBQ pork bao (3 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Shrimp &amp; Bamboo Ha Gao</span><span class="item-dots"></span><span class="item-price">54.53</span></div>
+                            <p class="item-desc">Steamed shrimp and bamboo dumplings (4 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Shanghai Pork Dumplings</span><span class="item-dots"></span><span class="item-price">54.53</span></div>
+                            <p class="item-desc">Steamed Shanghai-style pork dumplings (6 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Pork Siu Mai</span><span class="item-dots"></span><span class="item-price">54.53</span></div>
+                            <p class="item-desc">Steamed pork siu mai (4 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Chicken Siu Mai</span><span class="item-dots"></span><span class="item-price">54.53</span></div>
+                            <p class="item-desc">Steamed chicken siu mai (4 per order).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Steamed Dim Sum Platter</span><span class="item-dots"></span><span class="item-price">85.75</span></div>
+                            <p class="item-desc">Assorted steamed dim sum platter (5 pieces).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="pho" class="menu-section">
+                    <h2 class="section-header">Phở Favorites <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Dried Hand Mixed Pho</span><span class="item-dots"></span><span class="item-price">129.15</span></div>
+                            <p class="item-desc">Wok-fried filet mignon, meatball, and brisket over rice noodles with house sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Rib Bone Pho</span><span class="item-dots"></span><span class="item-price">131.53</span></div>
+                            <p class="item-desc">Filet mignon and beef back rib in beef broth simmered overnight.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">House Combination Pho</span><span class="item-dots"></span><span class="item-price">125.23</span></div>
+                            <p class="item-desc">Filet mignon, beef meatball, brisket, tendon, and tripe with thin rice noodles.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Rare Flap Meat Pho</span><span class="item-dots"></span><span class="item-price">124.53</span></div>
+                            <p class="item-desc">Filet mignon over thin noodles in house beef broth cooked 24+ hours.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Free Range Chicken Pho</span><span class="item-dots"></span><span class="item-price">125.93</span></div>
+                            <p class="item-desc">Homemade chicken broth, tender bone-in chicken, thin rice noodles.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Chicken Pho</span><span class="item-dots"></span><span class="item-price">122.43</span></div>
+                            <p class="item-desc">Shredded white-meat chicken and thin rice noodles in savory chicken broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Shrimp Pho</span><span class="item-dots"></span><span class="item-price">124.53</span></div>
+                            <p class="item-desc">Shrimp and rice noodles in veggie broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Seafood Pho</span><span class="item-dots"></span><span class="item-price">131.53</span></div>
+                            <p class="item-desc">Squid, shrimp, fishball with roe, and rice noodles in veggie broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Vegetarian Pho</span><span class="item-dots"></span><span class="item-price">122.43</span></div>
+                            <p class="item-desc">Chayote, mushroom, carrot, daikon, fried tofu, and thin rice noodles in veggie broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">No Meat Pho</span><span class="item-dots"></span><span class="item-price">87.43</span></div>
+                            <p class="item-desc">Thin rice noodles in our house broth, no meat.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Sour Pho</span><span class="item-dots"></span><span class="item-price">131.53</span></div>
+                            <p class="item-desc">Rice noodles, shrimp, fish ball, and squid in our sour-and-spicy broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Hu Tieu</span><span class="item-dots"></span><span class="item-price">123.83</span></div>
+                            <p class="item-desc">Rice noodles, chicken breast, shrimp, and beef meatball in house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Hu Tieu Mi</span><span class="item-dots"></span><span class="item-price">125.23</span></div>
+                            <p class="item-desc">Egg and rice noodles, chicken breast, shrimp, and beef meatball in house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wonton and Egg Noodle</span><span class="item-dots"></span><span class="item-price">126.00</span></div>
+                            <p class="item-desc">Egg noodles, wonton, shrimp, carrot, and bokchoy in house special broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Wonton Soup</span><span class="item-dots"></span><span class="item-price">126.00</span></div>
+                            <p class="item-desc">Ground-chicken wonton, shrimp, bokchoy, and carrot in homemade broth.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Spicy Noodle Soup</span><span class="item-dots"></span><span class="item-price">125.23</span></div>
+                            <p class="item-desc">Rice vermicelli in spicy broth with beef, tendon, Viet pork paste, and meatball (broth has shrimp paste).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="banhmi" class="menu-section">
+                    <h2 class="section-header">Bánh Mì <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Grilled Sandwich</span><span class="item-dots"></span><span class="item-price">85.33</span></div>
+                            <p class="item-desc">Choice of grilled beef, pork, chicken, or tofu with butter and pickled vegetables on a baguette.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Five Spices Beef Sandwich</span><span class="item-dots"></span><span class="item-price">90.93</span></div>
+                            <p class="item-desc">Grilled five-spice beef, butter, pickled vegetables, and homemade sauce on a baguette.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="rice" class="menu-section">
+                    <h2 class="section-header">Rice Plates <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Supreme Shaken Beef Fried Rice</span><span class="item-dots"></span><span class="item-price">154.63</span></div>
+                            <p class="item-desc">Tender filet mignon over flavorful fried rice.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Shaken Beef</span><span class="item-dots"></span><span class="item-price">131.53</span></div>
+                            <p class="item-desc">Tender filet mignon stir-fried, served with steamed white rice.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Korean BBQ Short Ribs</span><span class="item-dots"></span><span class="item-price">131.53</span></div>
+                            <p class="item-desc">Grilled short ribs in house special sauce with white rice and vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Orange Chicken</span><span class="item-dots"></span><span class="item-price">122.43</span></div>
+                            <p class="item-desc">White-meat chicken in house-made orange sauce over white rice and vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Grilled Meat &amp; Egg Rice</span><span class="item-dots"></span><span class="item-price">124.25</span></div>
+                            <p class="item-desc">Choice of grilled beef, pork, or chicken, fried egg, white rice, and mixed vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">House Fried Rice</span><span class="item-dots"></span><span class="item-price">124.25</span></div>
+                            <p class="item-desc">Stir-fried rice and scrambled egg with choice of beef, pork, chicken, or shrimp, and mixed vegetables.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Crispy Chicken Fried Rice</span><span class="item-dots"></span><span class="item-price">147.00</span></div>
+                            <p class="item-desc">Crispy fried chicken over fried rice with pickled vegetables and dipping sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Green Glow Rice</span><span class="item-dots"></span><span class="item-price">120.33</span></div>
+                            <p class="item-desc">Carrot, mushroom, bokchoy, cabbage, broccoli, onions, and fried tofu stir-fried in special sauce.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="noodles" class="menu-section">
+                    <h2 class="section-header">Noodle Plates <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Rice Noodles "Vermicelli"</span><span class="item-dots"></span><span class="item-price">121.73</span></div>
+                            <p class="item-desc">Choice of grilled meat over vermicelli with fresh herbs, veggies, egg roll, and fish sauce.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Garlic Noodles</span><span class="item-dots"></span><span class="item-price">124.25</span></div>
+                            <p class="item-desc">Choice of grilled meat over stir-fried Shanghai garlic noodles.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Shake-Shake Garlic Noodles</span><span class="item-dots"></span><span class="item-price">147.63</span></div>
+                            <p class="item-desc">Filet mignon and garlic-butter sauce over Shanghai noodles with onion, lettuce, tomato, cucumber.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">Serves 7</span>
+                            <div class="item-top"><span class="item-name">Beef Stir-Fry Noodles</span><span class="item-dots"></span><span class="item-price">123.55</span></div>
+                            <p class="item-desc">Instant noodles stir-fried with marinated beef, cabbage, white onion, and a fried egg.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="smoothies" class="menu-section">
+                    <h2 class="section-header">Smoothie 7-Packs <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Blueberry Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven blueberry smoothies.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Avocado Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven avocado smoothies.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Strawnana Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven strawberry-banana smoothies.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Mango Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven mango smoothies.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Coco Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven coconut smoothies.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Strawberry Smoothie (7-Pack)</span><span class="item-dots"></span><span class="item-price">52.15</span></div>
+                            <p class="item-desc">Seven strawberry smoothies.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="coffee" class="menu-section">
+                    <h2 class="section-header">Coffee 7-Packs <span>Party Trays</span></h2>
+                    <div class="item-list">
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Iced Coffee (7-Pack)</span><span class="item-dots"></span><span class="item-price">45.36</span></div>
+                            <p class="item-desc">Seven Vietnamese iced coffees.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Vietnamese White Iced Coffee (7-Pack)</span><span class="item-dots"></span><span class="item-price">51.03</span></div>
+                            <p class="item-desc">Seven Vietnamese white iced coffees (condensed milk).</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Black Coffee (7-Pack)</span><span class="item-dots"></span><span class="item-price">45.36</span></div>
+                            <p class="item-desc">Seven Vietnamese black coffees.</p>
+                        </div>
+                        <div class="item">
+                            <span class="item-serves">7-pack</span>
+                            <div class="item-top"><span class="item-name">Vietnamese Drip Coffee Hot (7-Pack)</span><span class="item-dots"></span><span class="item-price">45.36</span></div>
+                            <p class="item-desc">Seven hot Vietnamese drip coffees.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="ezcater-bottom">
+                    <h2>Ready to Order?</h2>
+                    <p>Place your catering order online through ezCater for local delivery or pickup. 24-hour advance notice required · $100 minimum order.</p>
+                    <a href="https://www.ezcater.com/catering/pvt/vpho-3?aff" target="_blank" rel="noopener noreferrer" class="ezcater-btn">Order Catering Online</a>
+                    <p class="disclaimer">Prices shown are base tray prices; final total on ezCater may include platform service and delivery fees.</p>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot-row">
+            <span>@VPHO_RESTAURANT</span>
+            <span>(408) 378-2234</span>
+            <span>WWW.V-PHO.COM</span>
+        </div>
+        <div class="foot-row">
+            <span>930 W Hamilton Ave, Ste 110, Campbell, CA 95008</span>
+        </div>
+        <p class="foot-note">Every tray serves approximately 7 people. &nbsp;·&nbsp; 24-hour advance notice required &nbsp;·&nbsp; $100 minimum order &nbsp;·&nbsp; Local delivery via ezCater.</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.menu-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
