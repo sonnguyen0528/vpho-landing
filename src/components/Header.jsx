@@ -53,10 +53,10 @@ export default function Header() {
           </div>
           <a
             href="#"
-            className="text-4xl lg:text-5xl font-black text-white tracking-[0.2em] uppercase"
+            className="text-2xl sm:text-3xl lg:text-5xl font-black text-white tracking-[0.1em] sm:tracking-[0.15em] uppercase text-center leading-tight max-w-[90vw]"
             style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
           >
-            V<span className="text-brand-gold">PHO</span>
+            Very <span className="text-brand-gold">Phonominal</span>
           </a>
         </div>
 
