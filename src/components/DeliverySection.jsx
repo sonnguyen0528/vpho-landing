@@ -31,14 +31,14 @@ export default function DeliverySection() {
             </span>
           </div>
         )}
-        <div className="flex flex-col sm:flex-row items-stretch justify-center gap-4 md:gap-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch justify-center gap-4 md:gap-6">
           {delivery.platforms.map((p) => (
             <a
               key={p.name}
               href={p.href}
               target="_blank"
-              rel="noreferrer"
-              className="flex-1 max-w-xs mx-auto sm:mx-0 px-8 py-5 text-white font-bold text-lg uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1"
+              rel="noopener noreferrer"
+              className="flex-1 basis-full sm:basis-[calc(50%-0.75rem)] lg:basis-[calc(25%-1.125rem)] max-w-xs mx-auto sm:mx-0 px-8 py-5 text-white font-bold text-lg uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-2xl hover:-translate-y-1"
               style={{ backgroundColor: p.bg }}
             >
               {p.name}
