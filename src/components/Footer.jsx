@@ -178,7 +178,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800 text-xs text-gray-500 leading-relaxed space-y-2">
+        <p>{business.consumerAdvisory}</p>
+        <p>{business.paymentTerms}</p>
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>
           © {new Date().getFullYear()} VPHO Restaurant. All rights reserved.
         </p>
