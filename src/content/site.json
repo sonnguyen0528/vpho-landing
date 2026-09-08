@@ -18,13 +18,13 @@
     "rotateSeconds": 6,
     "items": [
       {
-        "headline": "Your Birthday, Our Treat — 5% OFF your entire order. Show ID on your birthday at checkout.",
+        "headline": "Your Birthday, Our Treat. 5% OFF your entire order. Show ID on your birthday at checkout.",
         "terms": "Valid on your birthday only with photo ID · Excludes alcohol · Dine-in & takeout · One per guest per year · Cannot combine with other offers",
         "expires": ""
       },
       {
-        "headline": "Post & Save — 5% OFF for a social post, 10% OFF for a Google or Yelp review.",
-        "terms": "Post about VPho and tag @vpho_restaurant for 5% off — or leave us a Google or Yelp review for 10% off · Either/or, not both (max 10%) · Show your server the live post or submitted review at checkout to redeem · One redemption per table (not per guest) · Cannot be combined with each other or any other offer or discount · Valid now through Thursday, August 20, 2026",
+        "headline": "Post & Save. 5% OFF for a social post, 10% OFF for a Google or Yelp review.",
+        "terms": "Post about VPho and tag @vpho_restaurant for 5% off, or leave us a Google or Yelp review for 10% off · Either/or, not both (max 10%) · Show your server the live post or submitted review at checkout to redeem · One redemption per table (not per guest) · Cannot be combined with each other or any other offer or discount · Valid now through Thursday, August 20, 2026",
         "expires": "2026-08-20"
       }
     ]
@@ -53,7 +53,7 @@
   "delivery": {
     "eyebrow": "Order Online",
     "heading": "Delivered to your door.",
-    "subheading": "Pick your platform — same kitchen, same broth, same care.",
+    "subheading": "Pick your platform. Same kitchen, same broth, same care.",
     "rating": "4.6",
     "ratingNote": "average rating across all delivery platforms",
     "platforms": [
@@ -82,19 +82,19 @@
   "events": {
     "eyebrow": "Private Events",
     "heading": "Book the Entire Restaurant",
-    "subheading": "Birthdays, anniversaries, corporate dinners, family reunions — host your night in our space, with our full menu and full attention.",
+    "subheading": "Birthdays, anniversaries, corporate dinners, family reunions. Host your night in our space, with our full menu and full attention.",
     "details": [
       "Reserve the entire restaurant by the hour",
       "Seats up to 92 guests",
       "Custom menu and party tray options",
       "Available outside regular hours"
     ],
-    "ctaLabel": "Email hello@v-pho.com",
+    "ctaLabel": "Email: hello@v-pho.com",
     "ctaHref": "mailto:hello@v-pho.com?subject=Private%20Event%20Inquiry",
     "photos": [
       {
         "src": "/uploads/dining-room.jpg",
-        "alt": "VPho dining room — red booths and mural wall"
+        "alt": "VPho dining room with red booths and mural wall"
       },
       {
         "src": "/uploads/vpho-bar-counter.jpg",
@@ -166,7 +166,7 @@
       {
         "dishName": "Rib Bone Pho",
         "image": "/uploads/dish-rib-bone-pho.jpg",
-        "alt": "Rib Bone Pho — fall-off-the-bone back rib with filet mignon"
+        "alt": "Rib Bone Pho with fall-off-the-bone back rib and filet mignon"
       },
       {
         "dishName": "House Combination Pho",
@@ -186,7 +186,7 @@
       {
         "dishName": "Shake-Shake Garlic Noodle",
         "image": "/uploads/dish-shake-shake-garlic-noodle.jpg",
-        "alt": "Shake-Shake Garlic Noodle — stir-fried garlic noodles with beef cubes, peppers and onions"
+        "alt": "Shake-Shake Garlic Noodle, stir-fried garlic noodles with beef cubes, peppers and onions"
       },
       {
         "dishName": "Bánh Mì",
@@ -196,12 +196,12 @@
       {
         "dishName": "Crispy Mushroom",
         "image": "/uploads/dish-crispy-mushroom.jpg",
-        "alt": "Crispy Mushroom — golden breaded fried mushrooms with jalapeño, cilantro and dipping sauce in a black boat dish"
+        "alt": "Crispy Mushroom, golden breaded fried mushrooms with jalapeño, cilantro and dipping sauce in a black boat dish"
       },
       {
         "dishName": "Green Glow Rice",
         "image": "/uploads/dish-green-glow-rice.jpg",
-        "alt": "Green Glow Rice — stir-fried broccoli, carrots, cabbage, mushrooms and tofu with sliced beef over white rice"
+        "alt": "Green Glow Rice, stir-fried broccoli, carrots, cabbage, mushrooms and tofu with sliced beef over white rice"
       }
     ]
   },
