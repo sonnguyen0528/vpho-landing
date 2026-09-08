@@ -3,980 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPhonominal | Vietnamese Kitchen</title>
+    <title>Menu | VPho Restaurant — Vietnamese Kitchen, Campbell CA</title>
+    <meta name="description" content="The full VPho Restaurant menu: phở, bánh mì, dim sum, rice and noodle plates, boba, smoothies, coffee, fishbowls and cocktails. 930 W Hamilton Ave, Campbell, CA.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-cream: #F2EFE8;
-            --brand-orange: #C6531A;
-            --brand-pink: #E5C4BE;
-            --brand-green: #1F4D3A;
-            --text-dark: #2A1610;
-            --text-muted: #6B554A;
-            --line-color: rgba(42, 22, 16, 0.15);
-
+            --bg-dark: #2A2827;
+            --bg-deep: #1E1C1B;
+            --brand-gold: #F0A94C;
+            --brand-cream: #F2EFE8;
+            --text-muted: #A79E96;
             --font-display: 'Cormorant Garamond', serif;
             --font-ui: 'DM Sans', sans-serif;
-
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 4rem;
-            --space-xl: 8rem;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 
         body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
+            background-color: var(--bg-dark);
+            color: var(--brand-cream);
             font-family: var(--font-ui);
-            line-height: 1.4;
+            line-height: 1.5;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        ::selection { background: var(--brand-orange); color: var(--bg-cream); }
+        ::selection { background: var(--brand-gold); color: var(--bg-deep); }
 
-        h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1; color: var(--brand-orange); }
+        .wrap { max-width: 940px; margin: 0 auto; padding: 0 1rem; }
 
-        .logo-lockup {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            margin: var(--space-xl) auto var(--space-lg);
-            width: fit-content;
-            color: var(--brand-orange);
-        }
-        .logo-v { font-size: 14vw; line-height: 0.8; margin-right: -2vw; position: relative; z-index: 2; }
-        .logo-pho { display: flex; flex-direction: column; font-size: 6vw; line-height: 0.75; letter-spacing: -0.05em; position: relative; z-index: 1; }
-        .logo-pill {
-            position: absolute; left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid var(--brand-orange);
-            border-radius: 50px;
-            padding: 4px 10px;
-            font-family: var(--font-ui);
-            font-size: 0.6rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            background: var(--bg-cream);
-            z-index: 3;
-            white-space: nowrap;
-        }
-        .brand-script {
+        header {
             text-align: center;
+            padding: 3.5rem 1rem 2rem;
+        }
+        header .brand {
             font-family: var(--font-display);
-            font-style: italic;
-            font-size: 2rem;
-            color: var(--brand-orange);
-            margin-top: -1rem;
-            margin-bottom: 0.5rem;
-        }
-        .brand-tagline {
-            text-align: center;
-            font-size: 0.8rem;
-            letter-spacing: 0.4em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: var(--space-md);
-        }
-
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-md); }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            gap: var(--space-xl);
-            padding-bottom: var(--space-xl);
-            position: relative;
-        }
-
-        .nav-sidebar {
-            position: sticky;
-            top: var(--space-lg);
-            height: max-content;
-            border-right: 1px solid var(--line-color);
-            padding-right: var(--space-md);
-        }
-        .nav-list { list-style: none; }
-        .nav-item { margin-bottom: var(--space-sm); }
-        .nav-link {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.3s ease;
-            position: relative;
-            display: inline-block;
-        }
-        .nav-link:hover, .nav-link.active { color: var(--brand-orange); }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -2px; left: 0;
-            width: 0%; height: 1px; background-color: var(--brand-orange);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
-        .menu-section { margin-bottom: var(--space-xl); scroll-margin-top: var(--space-lg); }
-        .section-header {
-            font-size: 4rem;
-            margin-bottom: var(--space-md);
-            letter-spacing: -0.02em;
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: var(--space-xs);
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-        }
-        .section-header span {
-            font-family: var(--font-ui);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .section-intro {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: var(--space-md);
-            max-width: 70%;
-        }
-
-        .item-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-md) var(--space-lg);
-        }
-        .item { display: flex; flex-direction: column; }
-        .item-top { display: flex; align-items: baseline; margin-bottom: 4px; }
-        .item-num {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            color: var(--brand-orange);
-            margin-right: 0.5rem;
-            font-weight: 600;
-        }
-        .item-name { font-family: var(--font-display); font-size: 1.4rem; color: var(--text-dark); font-weight: 600; }
-        .item-dots { flex-grow: 1; border-bottom: 1px dotted var(--line-color); margin: 0 10px; position: relative; top: -6px; }
-        .item-price { font-family: var(--font-ui); font-size: 1rem; font-weight: 500; color: var(--brand-orange); white-space: nowrap; }
-        .item-desc { font-size: 0.85rem; color: var(--text-muted); max-width: 90%; }
-
-        .addon-box {
-            margin-top: var(--space-md);
-            border: 1px solid var(--line-color);
-            padding: var(--space-sm) var(--space-md);
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem var(--space-md);
-        }
-        .addon-box .addon-title {
-            grid-column: 1 / -1;
-            text-align: center;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 0.4rem;
-            margin-bottom: 0.4rem;
-        }
-        .addon-row {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-        }
-        .addon-row .addon-price { color: var(--brand-orange); font-weight: 500; }
-
-        .special-section {
-            background-color: var(--brand-pink);
-            padding: var(--space-lg);
-            border-radius: 2px;
-            margin: var(--space-xl) 0;
-            position: relative;
-            box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4), inset -1px -1px 4px rgba(0,0,0,0.05), 0 10px 30px rgba(42, 22, 16, 0.05);
-        }
-        .special-section h2 {
-            color: var(--text-dark);
-            font-size: 3rem;
-            margin-bottom: var(--space-md);
-            text-align: center;
-        }
-        .diy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }
-        .diy-category { border-top: 1px solid rgba(42, 22, 16, 0.2); padding-top: var(--space-sm); }
-        .diy-category h4 {
-            font-family: var(--font-ui);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-dark);
-            margin-bottom: var(--space-sm);
-        }
-        .diy-subhead {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--brand-orange);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 0.6rem;
-            margin-bottom: 0.3rem;
-        }
-        .diy-options { list-style: none; font-size: 0.9rem; color: var(--text-dark); }
-        .diy-options li { margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; }
-        .diy-options li::before {
-            content: '';
-            display: inline-block;
-            width: 4px; height: 4px;
-            background: var(--brand-orange);
-            border-radius: 50%;
-            margin-right: 8px;
-            flex-shrink: 0;
-        }
-        .diy-options .diy-name { flex-grow: 1; }
-        .diy-options .diy-up { color: var(--brand-orange); font-size: 0.8rem; font-weight: 500; }
-        .diy-price-row {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.4rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--brand-orange);
-        }
-        .broth-row {
-            display: flex;
-            justify-content: space-around;
-            margin-top: var(--space-sm);
-            padding-top: var(--space-sm);
-            border-top: 1px solid rgba(42, 22, 16, 0.2);
-        }
-        .broth-pill {
-            border: 1px solid var(--text-dark);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .catering-section {
-            background-color: var(--brand-green);
-            color: var(--bg-cream);
-            padding: var(--space-lg);
-            border-radius: 2px;
-            margin: var(--space-xl) 0;
-            text-align: center;
-        }
-        .catering-section h2 {
-            color: var(--bg-cream);
-            font-size: 3rem;
-            margin-bottom: var(--space-sm);
-        }
-        .catering-section p { font-size: 1rem; max-width: 600px; margin: 0 auto var(--space-sm); opacity: 0.9; }
-        .catering-section .catering-cta { font-style: italic; opacity: 0.8; font-size: 0.95rem; margin-top: var(--space-sm); }
-        .ezcater-btn {
-            display: inline-block;
-            background-color: #E5A93C;
-            color: #1A1A1A;
-            font-family: var(--font-display);
+            font-size: clamp(3rem, 11vw, 5.5rem);
             font-weight: 700;
-            font-size: 1.15rem;
-            letter-spacing: 0.04em;
-            text-decoration: none;
-            padding: 0.85rem 2.25rem;
-            border-radius: 2px;
-            margin: var(--space-sm) 0;
-            transition: background-color 0.25s ease, transform 0.15s ease;
+            line-height: 0.9;
+            color: var(--brand-gold);
+            letter-spacing: -0.02em;
         }
-        .ezcater-btn:hover, .ezcater-btn:focus { background-color: #F2BC55; transform: translateY(-1px); }
-        @media (max-width: 600px) { .ezcater-btn { display: block; width: 100%; padding: 1rem; font-size: 1.05rem; } }
-
-        .booze-section {
-            background-color: var(--text-dark);
-            color: var(--bg-cream);
-            padding: var(--space-lg);
-            border-radius: 2px;
-            margin: var(--space-xl) 0;
-        }
-        .booze-section .section-header { color: var(--brand-pink); border-bottom-color: rgba(242, 239, 232, 0.2); }
-        .booze-section .section-header span { color: var(--bg-cream); opacity: 0.7; }
-        .booze-section h3 { color: var(--brand-pink); }
-        .booze-section .item-name { color: var(--bg-cream); }
-        .booze-section .item-desc { color: rgba(242, 239, 232, 0.7); }
-        .booze-section .item-dots { border-bottom-color: rgba(242, 239, 232, 0.25); }
-        .booze-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
-        .booze-col h3 {
-            font-size: 2rem;
-            margin-bottom: var(--space-sm);
-            border-bottom: 1px solid rgba(242, 239, 232, 0.2);
-            padding-bottom: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .booze-col h3 .booze-base {
-            font-family: var(--font-ui);
-            font-size: 0.95rem;
-            color: var(--brand-pink);
-            font-weight: 500;
-        }
-        .booze-list { list-style: none; margin-bottom: var(--space-lg); }
-        .booze-list li { margin-bottom: 0.7rem; }
-        .booze-list .booze-name { font-family: var(--font-display); font-size: 1.25rem; color: var(--bg-cream); }
-        .booze-list .booze-desc { font-size: 0.8rem; color: rgba(242, 239, 232, 0.7); }
-        .booze-flat { list-style: none; columns: 2; column-gap: var(--space-md); }
-        .booze-flat li { font-size: 0.95rem; margin-bottom: 0.4rem; break-inside: avoid; }
-
-        .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md) var(--space-lg); }
-        .app-grid .item-list { display: contents; }
-
-        .bev-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
-        .bev-group { margin-bottom: var(--space-md); }
-        .bev-group h3 {
-            font-size: 2rem;
-            color: var(--text-dark);
-            margin-bottom: var(--space-sm);
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        .bev-group h3 .bev-base {
-            font-family: var(--font-ui);
-            font-size: 0.85rem;
-            color: var(--brand-orange);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-        .bev-list { font-size: 0.95rem; list-style: none; }
-        .bev-list li {
-            margin-bottom: 0.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-        .bev-list li .bev-name { flex-grow: 1; }
-        .bev-list li .bev-price { color: var(--brand-orange); font-weight: 500; white-space: nowrap; }
-        .bev-list .star::before { content: '★ '; color: var(--brand-orange); }
-        .bev-list.two-col { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--space-md); }
-
-        .topping-box {
-            margin-top: var(--space-sm);
-            border: 1px solid var(--line-color);
-            padding: var(--space-sm) var(--space-md);
-        }
-        .topping-box .topping-title {
-            text-align: center;
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
+        header .tagline {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.28em;
             text-transform: uppercase;
             color: var(--text-muted);
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 0.4rem;
-            margin-bottom: 0.4rem;
         }
-        .topping-box ul { list-style: none; }
-        .topping-box li { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.2rem 0; }
-        .topping-box li .topping-price { color: var(--brand-orange); font-weight: 500; }
 
-        .hero-img-container { width: 100%; height: 60vh; margin-bottom: var(--space-xl); position: relative; overflow: hidden; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; filter: sepia(0.3) contrast(1.1) brightness(0.9); }
-        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--bg-cream) 0%, transparent 40%); }
-        .inline-img { width: 100%; height: 300px; object-fit: cover; margin: var(--space-md) 0; filter: sepia(0.2) contrast(1.1); }
+        .jump {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem auto 0;
+            max-width: 780px;
+        }
+        .jump a {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--brand-cream);
+            text-decoration: none;
+            border: 1px solid rgba(240, 169, 76, 0.4);
+            border-radius: 999px;
+            padding: 0.4rem 0.9rem;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .jump a:hover, .jump a:focus-visible {
+            background: var(--brand-gold);
+            color: var(--bg-deep);
+            border-color: var(--brand-gold);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin: 1.75rem auto 0;
+        }
+        .btn {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            transition: opacity 0.2s, background-color 0.2s, color 0.2s;
+        }
+        .btn-primary { background: var(--brand-gold); color: var(--bg-deep); }
+        .btn-ghost { border: 1px solid rgba(242, 239, 232, 0.35); color: var(--brand-cream); }
+        .btn:hover { opacity: 0.85; }
+        .btn-ghost:hover { background: rgba(242, 239, 232, 0.08); }
+
+        .pages { padding: 2.5rem 0 1rem; }
+        .page {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.25rem;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+            scroll-margin-top: 1.5rem;
+            background: var(--bg-deep);
+        }
+
+        .catering {
+            border: 1px solid rgba(240, 169, 76, 0.35);
+            border-radius: 10px;
+            padding: 2.5rem 1.75rem;
+            text-align: center;
+            margin: 2.5rem auto 0;
+        }
+        .catering h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--brand-gold);
+            line-height: 1;
+        }
+        .catering p { margin: 0.9rem auto 0; max-width: 560px; color: var(--text-muted); font-size: 0.95rem; }
+        .catering .actions { margin-top: 1.5rem; }
 
         footer {
-            border-top: 1px solid var(--line-color);
-            padding: var(--space-lg) 0;
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: var(--space-xl);
-        }
-        footer .foot-row {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-lg);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: var(--space-sm);
-            flex-wrap: wrap;
-        }
-        footer .foot-note {
+            padding: 3.5rem 1rem 4rem;
             font-size: 0.75rem;
-            font-style: italic;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             color: var(--text-muted);
-            opacity: 0.85;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--brand-gold); }
+        footer .foot-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 0.9rem; }
+        footer .foot-note {
+            margin-top: 1.5rem;
+            font-size: 0.7rem;
+            font-style: italic;
             text-transform: none;
             letter-spacing: 0.02em;
+            opacity: 0.8;
         }
 
-        @media (max-width: 1024px) {
-            .menu-grid { grid-template-columns: 200px 1fr; }
-            .diy-grid { grid-template-columns: repeat(2, 1fr); }
-            .app-grid { grid-template-columns: repeat(2, 1fr); }
-            .booze-grid { grid-template-columns: 1fr; }
-        }
-        @media (max-width: 768px) {
-            .menu-grid { grid-template-columns: 1fr; }
-            .nav-sidebar {
-                position: static; border-right: none;
-                border-bottom: 1px solid var(--line-color);
-                padding-bottom: var(--space-sm);
-                margin-bottom: var(--space-lg);
-                overflow-x: auto; white-space: nowrap;
-            }
-            .nav-list { display: flex; gap: var(--space-sm); }
-            .item-list, .bev-container, .app-grid, .addon-box, .bev-list.two-col { grid-template-columns: 1fr; display: grid; }
-            .booze-flat { columns: 1; }
-            .logo-v { font-size: 24vw; }
-            .logo-pho { font-size: 10vw; }
+        @media (max-width: 600px) {
+            header { padding-top: 2.5rem; }
+            .jump { display: none; }
+            .page { border-radius: 4px; margin-bottom: 0.75rem; }
+            .catering { padding: 2rem 1.25rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="hero-img-container">
-        <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=2000&auto=format&fit=crop" alt="Steaming Pho Bowl" class="hero-img">
-        <div class="hero-overlay"></div>
-    </div>
+    <header>
+        <div class="brand">VPho</div>
+        <p class="tagline">Vietnamese Kitchen &nbsp;·&nbsp; Campbell, CA</p>
 
-    <div class="container">
-        <header>
-            <div class="logo-lockup">
-                <div class="logo-v">V</div>
-                <div class="logo-pho">
-                    <span>PH</span>
-                    <span>O</span>
-                </div>
-                <div class="logo-pill">VPhonominal</div>
-            </div>
-            <p class="brand-tagline">Vietnamese Kitchen &nbsp;·&nbsp; v-pho.com</p>
-        </header>
+        <nav class="jump" aria-label="Jump to menu section">
+            <a href="#appetizers">Appetizers</a>
+            <a href="#dimsum">Dim Sum &amp; Bánh Mì</a>
+            <a href="#pho">Phở</a>
+            <a href="#diy">D.I.Y. Phở</a>
+            <a href="#rice">Rice Plates</a>
+            <a href="#noodles">Noodle Plates</a>
+            <a href="#drinks">Drinks &amp; Boba</a>
+            <a href="#bar">Coffee &amp; Bar</a>
+        </nav>
 
-        <div class="menu-grid">
-            <aside class="nav-sidebar">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#appetizers" class="nav-link">Appetizers</a></li>
-                    <li class="nav-item"><a href="#dimsum" class="nav-link">Dim Sum</a></li>
-                    <li class="nav-item"><a href="#pho" class="nav-link">Phở Favorites</a></li>
-                    <li class="nav-item"><a href="#diy" class="nav-link">D.I.Y. Phở</a></li>
-                    <li class="nav-item"><a href="#banhmi" class="nav-link">Bánh Mì</a></li>
-                    <li class="nav-item"><a href="#catering" class="nav-link">Party Trays</a></li>
-                    <li class="nav-item"><a href="#rice" class="nav-link">Rice Plates</a></li>
-                    <li class="nav-item"><a href="#noodles" class="nav-link">Noodle Plates</a></li>
-                    <li class="nav-item"><a href="#smoothies" class="nav-link">Smoothies</a></li>
-                    <li class="nav-item"><a href="#boba" class="nav-link">Boba Tea</a></li>
-                    <li class="nav-item"><a href="#drinks" class="nav-link">Coffee &amp; Drinks</a></li>
-                    <li class="nav-item"><a href="#bar" class="nav-link">Fishbowls &amp; Cocktails</a></li>
-                </ul>
-            </aside>
-
-            <main>
-
-                <section id="appetizers" class="menu-section">
-                    <h2 class="section-header">Appetizers <span>To Share</span></h2>
-                    <div class="app-grid">
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">1.</span><span class="item-name">Saigon Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div>
-                            <p class="item-desc">Crispy fried chicken wings tossed in a sweet, butter, and mildly spicy fish sauce glaze.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">2.</span><span class="item-name">Wings Wings</span><span class="item-dots"></span><span class="item-price">11.66</span></div>
-                            <p class="item-desc">Crispy fried chicken wings tossed in Lemon Pepper / Teriyaki / Buffalo Garlic / BBQ / Honey Hot / Korean BBQ.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">3.</span><span class="item-name">Egg Rolls (4)</span><span class="item-dots"></span><span class="item-price">11.49</span></div>
-                            <p class="item-desc">Crispy rolls filled with pork, chicken, taro, carrot, glass noodles, and mushrooms.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">4.</span><span class="item-name">Spring Roll (2)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
-                            <p class="item-desc">Rice paper with shrimp &amp; pork, and mixed vegetables served with peanut butter.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">5.</span><span class="item-name">Fried Tofu</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
-                            <p class="item-desc">Crispy tofu, deep-fried with Thai basil for a simple, tasty street food snack.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">6.</span><span class="item-name">Avocado Cheese Rangoon (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
-                            <p class="item-desc">Deep-fried wonton wrapper filled with avocado and cream cheese.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">7.</span><span class="item-name">Cajun French Fries</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
-                            <p class="item-desc">Skinny fries tossed with fresh herb, served with ketchup.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">8.</span><span class="item-name">Pot Stickers (5)</span><span class="item-dots"></span><span class="item-price">10.19</span></div>
-                            <p class="item-desc">Ground chicken mixed with vegetable.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">9.</span><span class="item-name">Calamari</span><span class="item-dots"></span><span class="item-price">13.49</span></div>
-                            <p class="item-desc">Fried calamari tossed with garlic butter, jalapenos, white onion, spicy mayo sauce.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">10.</span><span class="item-name">Crispy Mushroom</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
-                            <p class="item-desc">Crispy mushroom tossed with garlic butter sauce, jalapeños, and white onion.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">11.</span><span class="item-name">Deep Fried Wonton (5)</span><span class="item-dots"></span><span class="item-price">10.49</span></div>
-                            <p class="item-desc">Crispy wonton skin filled with shrimp and ground chicken, perfectly seasoned for a savory crunch.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">12.</span><span class="item-name">Taro Shrimp Cake (2)</span><span class="item-dots"></span><span class="item-price">7.79</span></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">13.</span><span class="item-name">V-Tastic Sampler</span><span class="item-dots"></span><span class="item-price">17.59</span></div>
-                            <p class="item-desc">1 spring roll, 1 egg roll, 2 cheese rangoon, 2 shrimps, 2 deep-fried wonton.</p>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="dimsum" class="menu-section">
-                    <h2 class="section-header">Dim Sum <span>Steamed &amp; Fried</span></h2>
-                    <div class="item-list">
-                        <div class="item"><div class="item-top"><span class="item-num">14.</span><span class="item-name">Chicken Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">15.</span><span class="item-name">Vegetables Bun (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">16.</span><span class="item-name">Charsiu Pork Steamed Bao (3)</span><span class="item-dots"></span><span class="item-price">8.49</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">17.</span><span class="item-name">Shrimp &amp; Bamboo Ha Gao (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">18.</span><span class="item-name">Shanghai Pork Dumplings (6)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">19.</span><span class="item-name">Pork / Chicken Siu Mai (4)</span><span class="item-dots"></span><span class="item-price">7.79</span></div></div>
-                        <div class="item"><div class="item-top"><span class="item-num">20.</span><span class="item-name">Steamed Dim Sum Platter (5)</span><span class="item-dots"></span><span class="item-price">12.25</span></div></div>
-                    </div>
-                </section>
-
-
-                <section id="pho" class="menu-section">
-                    <h2 class="section-header">Phở Favorites <span>Our Bowls</span></h2>
-                    <p class="section-intro">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55.</p>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">21.</span><span class="item-name">Dried Hand Mixed Pho</span><span class="item-dots"></span><span class="item-price">18.45</span></div>
-                            <p class="item-desc">Wok fried filet mignon, meatball, and brisket, rice noodle mixed with homemade sauce.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">22.</span><span class="item-name">Rib Bone Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
-                            <p class="item-desc">Filet mignon and beef back rib in beef broth cooked overnight.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">23.</span><span class="item-name">House Combination Pho</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
-                            <p class="item-desc">Filet mignon, beef meatball, brisket, tendon, and tripe with thin rice noodles.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">24.</span><span class="item-name">Rare Flap Meat Pho</span><span class="item-dots"></span><span class="item-price">17.79</span></div>
-                            <p class="item-desc">Filet mignon with thin noodle in house beef broth cooked for 24+ hours.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">25.</span><span class="item-name">Free Range Chicken Pho</span><span class="item-dots"></span><span class="item-price">17.99</span></div>
-                            <p class="item-desc">Homemade chicken broth, tender chicken with bone, served with thin rice noodles.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">26.</span><span class="item-name">Chicken Pho</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
-                            <p class="item-desc">Shredded white meat chicken and thin rice noodles in savory chicken broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">27.</span><span class="item-name">Shrimp Pho</span><span class="item-dots"></span><span class="item-price">17.79</span></div>
-                            <p class="item-desc">Shrimp and rice noodles in veggies broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">28.</span><span class="item-name">Seafood Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
-                            <p class="item-desc">Squid, shrimp, fishball w/ roe and rice noodles in veggies broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">29.</span><span class="item-name">Vegetarian Pho</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
-                            <p class="item-desc">Chayote, mushroom, carrot, daikon, fried tofu, and thin rice noodles in veggies broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">30.</span><span class="item-name">No Meat Pho</span><span class="item-dots"></span><span class="item-price">12.49</span></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">31.</span><span class="item-name">Sour Pho</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
-                            <p class="item-desc">Rice noodle, shrimp, fish ball, squid with our sour and spicy broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">32.</span><span class="item-name">Hủ Tiếu</span><span class="item-dots"></span><span class="item-price">17.69</span></div>
-                            <p class="item-desc">Rice noodle, chicken breast, shrimp, &amp; beef meatball served with our house special broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">33.</span><span class="item-name">Hủ Tiếu Mì</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
-                            <p class="item-desc">Egg noodle mixed w/ rice noodle, chicken breast, shrimp, &amp; beef meatball served with our house special broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">34.</span><span class="item-name">Wonton and Egg Noodle</span><span class="item-dots"></span><span class="item-price">18.00</span></div>
-                            <p class="item-desc">Egg noodle, wonton, shrimp, carrot, bokchoy served with our house special broth.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">35.</span><span class="item-name">Wonton Soup</span><span class="item-dots"></span><span class="item-price">18.00</span></div>
-                            <p class="item-desc">Ground chicken wonton, shrimps, bokchoy, carrot, served w/ homemade broth. Add egg noodles for $2.50.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">36.</span><span class="item-name">Vietnamese Spicy Noodle Soup</span><span class="item-dots"></span><span class="item-price">17.89</span></div>
-                            <p class="item-desc">Rice vermicelli in spicy soup, beef, tendon, Vietnamese pork paste, and meatball. Broth has shrimp paste.</p>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="diy" class="special-section menu-section">
-                    <h2>D.I.Y. Phở</h2>
-                    <div class="diy-grid">
-                        <div class="diy-category">
-                            <h4>I. Choose Noodle Type</h4>
-                            <ul class="diy-options">
-                                <li><span class="diy-name">Option 1: 2 Proteins &amp; Thin Noodles</span></li>
-                                <li><span class="diy-name">Option 2: 2 Proteins &amp; Fresh Noodles</span></li>
-                            </ul>
-                            <div class="diy-price-row"><span>Thin</span><span>$17.85</span></div>
-                            <div class="diy-price-row"><span>Fresh</span><span>$18.80</span></div>
-                        </div>
-                        <div class="diy-category">
-                            <h4>II. Choose Your Protein</h4>
-                            <p class="diy-subhead">Seafood</p>
-                            <ul class="diy-options">
-                                <li><span class="diy-name">Shrimp</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Fishball w/ Roe</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Squid</span><span class="diy-up">+1.50</span></li>
-                            </ul>
-                            <p class="diy-subhead">Beef</p>
-                            <ul class="diy-options">
-                                <li><span class="diy-name">Filet Mignon (Halal)</span></li>
-                                <li><span class="diy-name">Brisket</span></li>
-                                <li><span class="diy-name">Tendon</span></li>
-                                <li><span class="diy-name">Tripe</span></li>
-                                <li><span class="diy-name">Beef Meatball</span></li>
-                            </ul>
-                            <p class="diy-subhead">Poultry</p>
-                            <ul class="diy-options"><li><span class="diy-name">Chicken Breast</span></li></ul>
-                            <p class="diy-subhead">Meatless</p>
-                            <ul class="diy-options"><li><span class="diy-name">Fried Tofu</span></li></ul>
-                        </div>
-                        <div class="diy-category">
-                            <h4>III. Choose Your Veggies</h4>
-                            <ul class="diy-options">
-                                <li><span class="diy-name">Green Onion</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">White Onion</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Cabbage</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Carrot</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Chayote</span><span class="diy-up">+45¢</span></li>
-                                <li><span class="diy-name">Broccoli</span><span class="diy-up">+75¢</span></li>
-                                <li><span class="diy-name">Mushroom</span><span class="diy-up">+75¢</span></li>
-                                <li><span class="diy-name">Daikon</span><span class="diy-up">+75¢</span></li>
-                                <li><span class="diy-name">Bokchoy</span><span class="diy-up">+85¢</span></li>
-                            </ul>
-                        </div>
-                        <div class="diy-category">
-                            <h4>IV. Choose Your Broth</h4>
-                            <div class="broth-row">
-                                <span class="broth-pill">Chicken</span>
-                                <span class="broth-pill">Beef</span>
-                                <span class="broth-pill">Veggie</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="banhmi" class="menu-section">
-                    <h2 class="section-header">Bánh Mì <span>Sandwiches</span></h2>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">37.</span><span class="item-name">Vietnamese Grilled Sandwich</span><span class="item-dots"></span><span class="item-price">12.19</span></div>
-                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/tofu), butter, pickled vegetables. Add a fried egg +$2.50.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">38.</span><span class="item-name">Five Spices Beef Sandwich</span><span class="item-dots"></span><span class="item-price">12.99</span></div>
-                            <p class="item-desc">Grilled five spices beef, butter, pickled vegetables, homemade sauce. Add a fried egg +$2.50.</p>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="catering" class="catering-section menu-section">
-                    <h2>Party Trays Available</h2>
-                    <p>Feeding a crowd? Every tray serves approximately 7 people — 66 options across appetizers, pho, rice, noodles, and drinks.</p>
-                    <a href="/party-trays/" class="ezcater-btn" style="background-color: var(--bg-cream);">View full catering menu &rarr;</a>
-                    <a href="https://www.ezcater.com/catering/pvt/vpho-3?aff" target="_blank" rel="noopener noreferrer" class="ezcater-btn">Order Catering Online</a>
-                    <p class="catering-cta">Or contact us at <a href="mailto:hello@v-pho.com" style="color: var(--bg-cream); text-decoration: underline;">hello@v-pho.com</a> for custom orders and anything you need.</p>
-                </section>
-
-
-                <section id="rice" class="menu-section">
-                    <h2 class="section-header">Rice Plates <span>Wok &amp; Grill</span></h2>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">39.</span><span class="item-name">Supreme Shaken Beef Fried Rice</span><span class="item-dots"></span><span class="item-price">22.09</span></div>
-                            <p class="item-desc">A delectable blend of tender filet mignon and flavorful fried rice, creating a supreme taste sensation.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">40.</span><span class="item-name">Vietnamese Shaken Beef</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
-                            <p class="item-desc">Tender filet mignon stir-fried and served with steamed white rice.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">41.</span><span class="item-name">Korean BBQ Short Ribs</span><span class="item-dots"></span><span class="item-price">18.79</span></div>
-                            <p class="item-desc">Grilled short ribs marinated in house special sauce, white rice, &amp; vegetables.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">42.</span><span class="item-name">Orange Chicken</span><span class="item-dots"></span><span class="item-price">17.49</span></div>
-                            <p class="item-desc">White meat chicken, fresh house made orange sauce, served over white rice and vegetables.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">43.</span><span class="item-name">Grilled Meat &amp; Egg Rice</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
-                            <p class="item-desc">Choice of (beef/pork/chicken), golden fried egg, steamed white rice, mixed vegetables.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">44.</span><span class="item-name">House Fried Rice</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
-                            <p class="item-desc">Stir-fried rice, scrambled egg with choice of meat (beef/pork/chicken/shrimp), mixed vegetables. Add a fried egg +$2.50.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">45.</span><span class="item-name">Crispy Chicken Fried Rice</span><span class="item-dots"></span><span class="item-price">21.00</span></div>
-                            <p class="item-desc">Crispy fried chicken over flavorful fried rice, paired with pickled vegetables and a savory dipping sauce. Add a fried egg +$2.50.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">46.</span><span class="item-name">Green Glow Rice</span><span class="item-dots"></span><span class="item-price">17.19</span></div>
-                            <p class="item-desc">Carrot, mushroom, bokchoy, cabbage, broccoli, white onion, green onion, fried tofu stir-fried with our special sauce.</p>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="noodles" class="menu-section">
-                    <h2 class="section-header">Noodle Plates <span>Stir-Fry</span></h2>
-                    <div class="item-list">
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">47.</span><span class="item-name">Rice Noodles "Vermicelli"</span><span class="item-dots"></span><span class="item-price">17.39</span></div>
-                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/shrimp, five spices grilled beef), vermicelli noodles, fresh herbs, veggies, egg roll, fish sauce.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">48.</span><span class="item-name">Garlic Noodles</span><span class="item-dots"></span><span class="item-price">17.75</span></div>
-                            <p class="item-desc">Choice of grilled meat (beef/pork/chicken/shrimp/five spices beef) served over stir fried Shanghai noodles. Add a fried egg +$2.50.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">49.</span><span class="item-name">Shake-Shake Garlic Noodles</span><span class="item-dots"></span><span class="item-price">21.09</span></div>
-                            <p class="item-desc">Tender filet mignon, house garlic butter sauce, served over stir fried Shanghai noodles and white onion, lettuce, tomatoes, cucumber.</p>
-                        </div>
-                        <div class="item">
-                            <div class="item-top"><span class="item-num">50.</span><span class="item-name">Beef Stir-Fry Noodles</span><span class="item-dots"></span><span class="item-price">17.65</span></div>
-                            <p class="item-desc">Instant noodles stir-fried with marinated beef, cabbage, white onion, and topped with a fried egg.</p>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="smoothies" class="menu-section">
-                    <h2 class="section-header">Smoothies <span>$7.45 each</span></h2>
-                    <ul class="bev-list two-col">
-                        <li><span class="bev-name">Blueberry</span></li>
-                        <li><span class="bev-name">Avocado</span></li>
-                        <li><span class="bev-name">Strawnana</span></li>
-                        <li><span class="bev-name">Mango</span></li>
-                        <li><span class="bev-name">Coco</span></li>
-                        <li><span class="bev-name">Strawberry</span></li>
-                    </ul>
-                </section>
-
-
-                <section id="boba" class="menu-section">
-                    <h2 class="section-header">Boba Tea <span>$7.45 each</span></h2>
-                    <ul class="bev-list two-col">
-                        <li><span class="bev-name star">V-Milk Tea</span></li>
-                        <li><span class="bev-name star">Jasmine Black Milk Tea</span></li>
-                        <li><span class="bev-name">Cheese Milk Tea</span></li>
-                        <li><span class="bev-name">Thai Boba Ice Tea</span></li>
-                        <li><span class="bev-name">Peach Tea</span></li>
-                        <li><span class="bev-name star">Lychee Tea</span></li>
-                        <li><span class="bev-name">Green Apple Tea</span></li>
-                        <li><span class="bev-name">Honeydew Tea</span></li>
-                        <li><span class="bev-name">Strawberry Tea</span></li>
-                        <li><span class="bev-name">Pineapple Tea</span></li>
-                        <li><span class="bev-name star">Guava Glow</span></li>
-                        <li><span class="bev-name">Peachy Mango Pop</span></li>
-                        <li><span class="bev-name">Strawberry Macchiato</span></li>
-                        <li><span class="bev-name">Mango Macchiato</span></li>
-                        <li><span class="bev-name">Black Tea Macchiato</span></li>
-                        <li><span class="bev-name">Jasmine Macchiato</span></li>
-                    </ul>
-
-                    <div class="topping-box">
-                        <div class="topping-title">Toppings</div>
-                        <ul>
-                            <li><span>Cheese Pudding</span><span class="topping-price">+1.00</span></li>
-                            <li><span>Crystal Boba</span><span class="topping-price">+0.85</span></li>
-                            <li><span>Boba</span><span class="topping-price">+0.50</span></li>
-                            <li><span>Aloe Vera</span><span class="topping-price">+1.00</span></li>
-                            <li><span>Mango Jelly</span><span class="topping-price">+0.75</span></li>
-                            <li><span>Rainbow Jelly</span><span class="topping-price">+0.75</span></li>
-                            <li><span>Lychee Jelly</span><span class="topping-price">+0.75</span></li>
-                            <li><span>Grass Jelly</span><span class="topping-price">+0.90</span></li>
-                            <li><span>Sea Salted Foam</span><span class="topping-price">+1.00</span></li>
-                        </ul>
-                    </div>
-                </section>
-
-
-                <section id="drinks" class="menu-section">
-                    <h2 class="section-header">Coffee &amp; Drinks <span>Refreshments</span></h2>
-
-                    <div class="bev-container">
-                        <div class="bev-group">
-                            <h3>Fresh Drinks</h3>
-                            <ul class="bev-list">
-                                <li><span class="bev-name star">Squeezed Orange Juice</span><span class="bev-price">7.45</span></li>
-                                <li><span class="bev-name">Fresh Watermelon Juice</span><span class="bev-price">7.89</span></li>
-                                <li><span class="bev-name star">Fresh Coconut Juice</span><span class="bev-price">7.45</span></li>
-                                <li><span class="bev-name star">Snowy Lemonade</span><span class="bev-price">8.00</span></li>
-                                <li><span class="bev-name">Lemonade</span><span class="bev-price">4.99</span></li>
-                                <li><span class="bev-name">Strawberry Lemonade</span><span class="bev-price">5.99</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="bev-group">
-                            <h3>Coffee</h3>
-                            <ul class="bev-list">
-                                <li><span class="bev-name">Vietnamese Iced Coffee</span><span class="bev-price">6.48</span></li>
-                                <li><span class="bev-name star">Vietnamese White Iced Coffee</span><span class="bev-price">7.29</span></li>
-                                <li><span class="bev-name">Vietnamese Black Coffee</span><span class="bev-price">6.48</span></li>
-                                <li><span class="bev-name">Vietnamese Drip Coffee (Hot)</span><span class="bev-price">6.48</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="bev-group">
-                            <h3>Soft Drinks</h3>
-                            <ul class="bev-list">
-                                <li><span class="bev-name">Coke / Diet Coke / Pepsi / Diet Pepsi / Sprite / Dr Pepper / Root Beer</span><span class="bev-price">3.49</span></li>
-                                <li><span class="bev-name">Thai Redbull</span><span class="bev-price">4.59</span></li>
-                                <li><span class="bev-name">Tea (Cup, Iced or Hot)</span><span class="bev-price">2.49</span></li>
-                                <li><span class="bev-name">Tea Pot</span><span class="bev-price">8.79</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section id="bar" class="booze-section menu-section">
-                    <h2 class="section-header">Fishbowls &amp; Cocktails <span>21+ · Bar</span></h2>
-
-                    <div class="booze-grid">
-                        <div class="booze-col">
-                            <h3>Fishbowls <span class="booze-base">$39</span></h3>
-                            <ul class="booze-list">
-                                <li>
-                                    <span class="booze-name">Miss Independent</span>
-                                    <p class="booze-desc">Strawberry soju, blue curacao, watermelon grape wine, electrolyte drink, lemonade, premium soju, topped with cotton candy.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Knock Out!</span>
-                                    <p class="booze-desc">Citron soju, cranberry, lime, han vodka soju, pomegranate.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Hulk Smash</span>
-                                    <p class="booze-desc">Apple soju, kiwi punch, kiwi, han premium saki, pop-rock rim.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Grape Galaxy</span>
-                                    <p class="booze-desc">Soju original, grape, watermelon wine, blue curacao, sprite, popsicle, glow cubes.</p>
-                                </li>
-                            </ul>
-
-                            <h3>Bottled Soju <span class="booze-base">$9.98</span></h3>
-                            <ul class="booze-flat">
-                                <li>Original — 16.50% ABV</li>
-                                <li>Peach</li>
-                                <li>Lychee</li>
-                                <li>Yogurt</li>
-                                <li>Strawberry</li>
-                                <li>Apple</li>
-                            </ul>
-                        </div>
-
-                        <div class="booze-col">
-                            <h3>Cocktails <span class="booze-base">$12.49</span></h3>
-                            <ul class="booze-list">
-                                <li>
-                                    <span class="booze-name">"SunnyD"</span>
-                                    <p class="booze-desc">Teq Han, apple mango soju, pineapple juice, ginger beer.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Passion Fruit Mojito</span>
-                                    <p class="booze-desc">Mint, lime, citrus Han, passion fruit, club soda.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Saigon Espresso Martini</span>
-                                    <p class="booze-desc">Han Original, coffee wine, espresso, sweet &amp; condensed milk.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Hot Doctor</span>
-                                    <p class="booze-desc">Cinnamon whiskey Han, Dr. Pepper.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Teq Sunrise</span>
-                                    <p class="booze-desc">Teq Han, orange juice, grenadine.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Moscow Mule</span>
-                                    <p class="booze-desc">Vodka Han, ginger beer, lime.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Frozen Mango Margarita</span>
-                                    <p class="booze-desc">Teq Han, mango wine, mango, citrus.</p>
-                                </li>
-                                <li>
-                                    <span class="booze-name">Blue Hawaiian Frozen</span>
-                                    <p class="booze-desc">Citrus Han, blue curaçao, pineapple, coconut cream, cherry.</p>
-                                </li>
-                            </ul>
-
-                            <h3>Beer <span class="booze-base">$7.49</span></h3>
-                            <ul class="booze-flat">
-                                <li>Asahi — 5.2% ABV</li>
-                                <li>Sapporo — 4.9% ABV</li>
-                                <li>Lagunitas IPA — 6.2% ABV</li>
-                                <li>Heineken — 5% ABV</li>
-                                <li>Corona Extra — 4.6% ABV</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </main>
+        <div class="actions">
+            <a class="btn btn-primary" href="https://www.ezcater.com/catering/pvt/vpho-3?aff" target="_blank" rel="noopener noreferrer">Order Catering</a>
+            <a class="btn btn-ghost" href="/menu/vpho-menu-2026.pdf" target="_blank" rel="noopener">Download PDF Menu</a>
         </div>
+    </header>
+
+    <div class="wrap">
+        <div class="pages">
+            <img id="appetizers" class="page" src="/menu/pages/p-02.jpg" width="1075" height="1521" fetchpriority="high"
+                 alt="Appetizers: egg rolls, spring rolls, golden ocean rolls, Saigon wings, wings wings, golden wonton crisps, avocado cheese rangoon, fried tofu, calamari, crispy mushroom, cajun french fries, pot stickers, butterfly shrimp, mozzarella cheese sticks, butter corn, zucchini sticks, the Vien club, V-Tastic sampler.">
+
+            <img id="dimsum" class="page" src="/menu/pages/p-03.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Dim Sum: Shanghai pork dumplings, shrimp and bamboo ha gao, pork or chicken siu mai, chicken bun, vegetable bun, charsiu pork bun, steamed dim sum platter. Bánh Mì: five spices beef sandwich, Vietnamese grilled sandwich.">
+
+            <img id="pho" class="page" src="/menu/pages/p-04.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Phở Legendary: rib bone phở and dry phở.">
+
+            <img class="page" src="/menu/pages/p-05.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Phở Legendary continued: hủ tiếu, sour phở, rare flap meat phở, free range chicken phở, house combination phở, shrimp phở, vegetarian phở, no meat phở, chicken phở, seafood phở, wonton and egg noodle, wonton soup, Vietnamese spicy noodle soup, beef stew.">
+
+            <img id="diy" class="page" src="/menu/pages/p-06.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="D.I.Y. Phở: choose your noodle type, protein, veggies, and broth.">
+
+            <img id="rice" class="page" src="/menu/pages/p-07.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Rice Plates: supreme shaken beef fried rice, crispy chicken fried rice, grilled meat and egg rice, Vietnamese shaken beef, Korean BBQ short ribs, orange chicken, house fried rice, green glow rice.">
+
+            <img id="noodles" class="page" src="/menu/pages/p-08.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Noodle Plates: rice noodles vermicelli, stir fried beef vermicelli, garlic noodles, shake-shake garlic noodles, beef stir-fry noodles.">
+
+            <img id="drinks" class="page" src="/menu/pages/p-09.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Drinks: smoothies, fresh drinks, boba tea and toppings.">
+
+            <img id="bar" class="page" src="/menu/pages/p-10.jpg" width="1075" height="1521" loading="lazy" decoding="async"
+                 alt="Coffee, soft drinks, and the bar: fishbowls, cocktails, bottled soju, and beer.">
+        </div>
+
+        <section class="catering">
+            <h2>Party Trays Available</h2>
+            <p>Feeding a crowd? Every tray serves approximately 7 people — 66 options across appetizers, phở, rice, noodles, and drinks.</p>
+            <div class="actions">
+                <a class="btn btn-primary" href="/party-trays/">View Catering Menu</a>
+                <a class="btn btn-ghost" href="mailto:hello@v-pho.com">Email Us</a>
+            </div>
+        </section>
     </div>
 
     <footer>
         <div class="foot-row">
             <span>@VPHO_RESTAURANT</span>
-            <span>(408) 378-2234</span>
-            <span>WWW.V-PHO.COM</span>
+            <a href="tel:+14083782234">(408) 378-2234</a>
+            <a href="/">WWW.V-PHO.COM</a>
         </div>
         <div class="foot-row">
             <span>930 W Hamilton Ave, Ste 110, Campbell, CA 95008</span>
         </div>
-        <p class="foot-note">★ All phở dishes have the option to upgrade to fresh rice noodles or egg noodles for an extra $1.55. &nbsp;·&nbsp; Paying with credit card adds a 3.25% surcharge. &nbsp;·&nbsp; 18% gratuity is added to parties of 5 or more.</p>
+        <p class="foot-note">Paying with credit card adds a 3.25% surcharge. &nbsp;·&nbsp; 18% gratuity is added to parties of 5 or more.</p>
     </footer>
-
-    <script>
-        const sections = document.querySelectorAll('.menu-section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
