@@ -1,6 +1,7 @@
 import AnnouncementBar from './components/AnnouncementBar'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import LunchSpecialSection from './components/LunchSpecialSection'
 import DeliverySection from './components/DeliverySection'
 import WelcomeSection from './components/WelcomeSection'
 import FeaturedDishesSection from './components/FeaturedDishesSection'
@@ -19,6 +20,7 @@ export default function App() {
         <Header />
       </div>
       <Hero />
+      <LunchSpecialSection />
       <DeliverySection />
       <WelcomeSection />
       <FeaturedDishesSection />

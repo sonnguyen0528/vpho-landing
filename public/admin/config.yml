@@ -237,6 +237,37 @@ collections:
                 name: image
                 widget: image
 
+          - label: Lunch Special (black band under the hero)
+            name: lunchSpecial
+            widget: object
+            collapsed: false
+            fields:
+              - label: Show the band
+                name: enabled
+                widget: boolean
+                default: true
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Dish
+                name: heading
+                widget: string
+              - label: Price
+                name: price
+                widget: string
+              - label: Hours / details
+                name: details
+                widget: string
+              - label: Start note (blank to hide)
+                name: startsNote
+                widget: string
+                required: false
+              - label: Expires on (YYYY-MM-DD, leave blank to keep showing)
+                name: expires
+                widget: string
+                required: false
+                hint: 'After this date the band auto-hides. Blank = always show.'
+
           - label: Announcement Bar
             name: announcement
             widget: object
