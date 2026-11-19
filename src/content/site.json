@@ -20,6 +20,11 @@
     "rotateSeconds": 6,
     "items": [
       {
+        "headline": "Closed Friday, November 27 for Thanksgiving. We reopen Saturday, November 28 at regular hours.",
+        "terms": "Regular hours: Lunch 11:00 AM - 3:00 PM · Dinner 5:00 PM - 10:30 PM · Happy Thanksgiving from the VPho family",
+        "expires": "2026-11-28"
+      },
+      {
         "headline": "Your Birthday, Our Treat. 5% OFF your entire order. Show ID on your birthday at checkout.",
         "terms": "Valid on your birthday only with photo ID · Excludes alcohol · Dine-in & takeout · One per guest per year · Cannot combine with other offers",
         "expires": ""
